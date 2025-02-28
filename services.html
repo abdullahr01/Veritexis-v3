@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veritexis - Services</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-black text-white">
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">Veritexis</div>
+      <div class="preloader-spinner mx-auto"></div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-glow"></div>
+
+  <!-- Navbar -->
+  <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold flex items-center">
+        <span class="text-3xl bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Veritexis</span>
+      </a>
+      <div class="hidden md:block">
+        <ul class="flex space-x-8">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about_us.html" class="nav-link">About Us</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li><a href="team.html" class="nav-link">Team</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact_us.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+      <button class="md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="fixed inset-0 bg-black bg-opacity-90 z-40 hidden">
+    <div class="flex flex-col h-full justify-center items-center text-2xl space-y-8">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about_us.html" class="nav-link">About Us</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="team.html" class="nav-link">Team</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact_us.html" class="nav-link">Contact</a>
+      <button class="mt-8 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="relative py-32 bg-gray-900">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-black bg-opacity-80"></div>
+    </div>
+    <div class="relative z-10 container mx-auto px-4 text-center">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6" data-aos="fade-up">
+        Our <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Services</span>
+      </h1>
+      <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+        We provide cutting-edge solutions tailored to your business needs with a focus on quality, innovation, and results.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Services -->
+  <section class="py-24 relative">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-4" data-aos="fade-up">Core Services</h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-16" data-aos="zoom-in" data-aos-delay="200"></div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Mobile Development -->
+        <div class="service-card p-8" data-aos="flip-left" data-aos-delay="100">
+          <div class="service-icon mx-auto">
+            <i class="fas fa-mobile-alt text-white text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-center">Mobile Development</h3>
+          <p class="text-center text-gray-300 mb-6">
+            Stunning apps for iOS and Android with seamless <span class="highlight">performance</span> and intuitive user experience.
+          </p>
+          <ul class="mt-6 space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-check text-purple-500 mr-2 mt-1"></i>
+              <div>
+                <span class="font-semibold">Native Development</span>
+                <p class="text-sm text-gray-400">Swift, Kotlin, and Java expertise for truly native experiences.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-purple-500 mr-2 mt-1"></i>
+              <div>
+                <span class="font-semibold">Cross-Platform Solutions</span>
+                <p class="text-sm text-gray-400">Flutter and React Native for cost-effective multi-platform apps.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-purple-500 mr-2 mt-1"></i>
+              <div>
+                <span class="font-semibold">App Store Optimization</span>
+                <p class="text-sm text-gray-400">Maximize visibility and downloads in app marketplaces.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Web Development -->
+        <div class="service-card p-8" data-aos="flip-left" data-aos-delay="300">
+          <div class="service-icon mx-auto">
+            <i class="fas fa-laptop-code text-white text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-center">Web Development</h3>
+          <p class="text-center text-gray-300 mb-6">
+            Responsive, dynamic websites built with <span class="highlight">precision</span> and modern technologies.
+          </p>
+          <ul class="mt-6 space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-check text-purple-500 mr-2 mt-1"></i>
+              <div>
+                <span class="font-semibold">Frontend Excellence</span>
+                <p class="text-sm text-gray-400">React, Vue, and Angular expertise for interactive interfaces.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-purple-500 mr-2 mt-1"></i>
+              <div>
+                <span class="font-semibold">Backend Development</span>
+                <p class="text-sm text-gray-400">Node.js, Python, and PHP solutions for robust server-side operations.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-purple-500 mr-2 mt-1"></i>
+              <div>
+                <span class="font-semibold">E-commerce Solutions</span>
+                <p class="text-sm text-gray-400">Custom storefronts and payment integrations for online retail.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Machine Learning -->
+        <div class="service-card p-8" data-aos="flip-left" data-aos-delay="500">
+          <div class="service-icon mx-auto">
+            <i class="fas fa-brain text-white text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-center">Machine Learning</h3>
+          <p class="text-center text-gray-300 mb-6">
+            Advanced ML solutions for <span class="highlight">growth</span> and insight into your business data.
+          </p>
+          <ul class="mt-6 space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-check text-purple-500 mr-2 mt-1"></i>
+              <div>
+                <span class="font-semibold">Predictive Analytics</span>
+                <p class="text-sm text-gray-400">Forecast trends and behavior with statistical algorithms.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-purple-500 mr-2 mt-1"></i>
+              <div>
+                <span class="font-semibold">Computer Vision</span>
+                <p class="text-sm text-gray-400">Image recognition and processing for advanced applications.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-purple-500 mr-2 mt-1"></i>
+              <div>
+                <span class="font-semibold">Natural Language Processing</span>
+                <p class="text-sm text-gray-400">Text analysis, sentiment detection, and chatbot development.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-purple-900 rounded-full opacity-10 blur-3xl"></div>
+  </section>
+
+  <!-- Additional Services -->
+  <section class="py-24 bg-gray-900 relative">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-4" data-aos="fade-up">Specialized Offerings</h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-16" data-aos="zoom-in" data-aos-delay="200"></div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- UI/UX Design -->
+        <div class="service-card p-8" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-start">
+            <div class="service-icon flex-shrink-0">
+              <i class="fas fa-paint-brush text-white text-2xl"></i>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-2xl font-bold mb-4">UI/UX Design</h3>
+              <p class="text-gray-300 mb-4">
+                Human-centered design that captivates users and drives conversions through <span class="highlight">intuitive interfaces</span>.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-purple-500 mr-2"></i>
+                  <span>User Research & Testing</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-purple-500 mr-2"></i>
+                  <span>Wireframing & Prototyping</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-purple-500 mr-2"></i>
+                  <span>Interaction Design</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Cloud Solutions -->
+        <div class="service-card p-8" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-start">
+            <div class="service-icon flex-shrink-0">
+              <i class="fas fa-cloud text-white text-2xl"></i>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-2xl font-bold mb-4">Cloud Solutions</h3>
+              <p class="text-gray-300 mb-4">
+                Scalable infrastructure and services for <span class="highlight">flexible</span> and cost-effective operations.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-purple-500 mr-2"></i>
+                  <span>AWS, Azure & GCP Expertise</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-purple-500 mr-2"></i>
+                  <span>Serverless Architecture</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-purple-500 mr-2"></i>
+                  <span>Cloud Migration</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Blockchain Development -->
+        <div class="service-card p-8" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-start">
+            <div class="service-icon flex-shrink-0">
+              <i class="fas fa-link text-white text-2xl"></i>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-2xl font-bold mb-4">Blockchain Development</h3>
+              <p class="text-gray-300 mb-4">
+                Innovative <span class="highlight">decentralized</span> solutions for secure transactions and smart contracts.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-purple-500 mr-2"></i>
+                  <span>Smart Contract Development</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-purple-500 mr-2"></i>
+                  <span>DApp Creation</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-purple-500 mr-2"></i>
+                  <span>Tokenization Solutions</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- DevOps -->
+        <div class="service-card p-8" data-aos="fade-up" data-aos-delay="400">
+          <div class="flex items-start">
+            <div class="service-icon flex-shrink-0">
+              <i class="fas fa-cogs text-white text-2xl"></i>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-2xl font-bold mb-4">DevOps & CI/CD</h3>
+              <p class="text-gray-300 mb-4">
+                Streamlined development and deployment cycles for <span class="highlight">faster</span> time-to-market.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-purple-500 mr-2"></i>
+                  <span>Pipeline Automation</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-purple-500 mr-2"></i>
+                  <span>Container Orchestration</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-purple-500 mr-2"></i>
+                  <span>Infrastructure as Code</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute -top-16 -right-16 w-64 h-64 bg-blue-900 rounded-full opacity-10 blur-3xl"></div>
+  </section>
+
+  <!-- Development Process -->
+  <section class="py-24 relative">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-4" data-aos="fade-up">Our Development Process</h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-16" data-aos="zoom-in" data-aos-delay="200"></div>
+      
+      <div class="flex flex-col md:flex-row justify-between relative">
+        <!-- Process Line -->
+        <div class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-blue-500 transform -translate-y-1/2 z-0"></div>
+        
+        <!-- Discovery -->
+        <div class="bg-purple-glass p-6 rounded-lg mb-8 md:mb-0 relative z-10" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto">1</div>
+          <h3 class="text-xl font-bold text-center mb-2">Discovery</h3>
+          <p class="text-gray-300 text-center">Understanding your needs and project requirements</p>
+        </div>
+        
+        <!-- Planning -->
+        <div class="bg-purple-glass p-6 rounded-lg mb-8 md:mb-0 relative z-10" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto">2</div>
+          <h3 class="text-xl font-bold text-center mb-2">Planning</h3>
+          <p class="text-gray-300 text-center">Strategy development and resource allocation</p>
+        </div>
+        
+        <!-- Design -->
+        <div class="bg-purple-glass p-6 rounded-lg mb-8 md:mb-0 relative z-10" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto">3</div>
+          <h3 class="text-xl font-bold text-center mb-2">Design</h3>
+          <p class="text-gray-300 text-center">Creating intuitive and beautiful interfaces</p>
+        </div>
+        
+        <!-- Development -->
+        <div class="bg-purple-glass p-6 rounded-lg mb-8 md:mb-0 relative z-10" data-aos="fade-up" data-aos-delay="400">
+          <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto">4</div>
+          <h3 class="text-xl font-bold text-center mb-2">Development</h3>
+          <p class="text-gray-300 text-center">Building your solution with quality code</p>
+        </div>
+        
+        <!-- Testing -->
+        <div class="bg-purple-glass p-6 rounded-lg mb-8 md:mb-0 relative z-10" data-aos="fade-up" data-aos-delay="500">
+          <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto">5</div>
+          <h3 class="text-xl font-bold text-center mb-2">Testing</h3>
+          <p class="text-gray-300 text-center">Ensuring reliability and performance</p>
+        </div>
+        
+        <!-- Launch -->
+        <div class="bg-purple-glass p-6 rounded-lg relative z-10" data-aos="fade-up" data-aos-delay="600">
+          <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto">6</div>
+          <h3 class="text-xl font-bold text-center mb-2">Launch</h3>
+          <p class="text-gray-300 text-center">Deployment and ongoing support</p>
+        </div>
+      </div>
+    </div>
+    <div class="absolute -bottom-16 -right-16 w-64 h-64 bg-purple-900 rounded-full opacity-10 blur-3xl"></div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-24 bg-gray-900">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-4" data-aos="fade-up">Ready to Build Something Amazing?</h2>
+      <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+        Let's discuss your project requirements and create a tailored solution for your business needs.
+      </p>
+      <a href="contact_us.html" class="btn-primary px-8 py-4 rounded-lg text-lg font-semibold" data-aos="fade-up" data-aos-delay="300">Request a Consultation</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+        <!-- Branding & Social -->
+        <div>
+          <a href="/" class="text-2xl font-bold mb-6 block">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Veritexis</span>
+          </a>
+          <p class="text-gray-400 mb-6">
+            Innovative solutions for your business, delivered with expertise and passion.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-gray-400 hover:text-purple-500 transition-colors">Home</a></li>
+            <li><a href="about_us.html" class="text-gray-400 hover:text-purple-500 transition-colors">About Us</a></li>
+            <li><a href="/services.html" class="text-gray-400 hover:text-purple-500 transition-colors">Services</a></li>
+            <li><a href="/portfolio.html" class="text-gray-400 hover:text-purple-500 transition-colors">Portfolio</a></li>
+            <li><a href="/team.html" class="text-gray-400 hover:text-purple-500 transition-colors">Team</a></li>
+            <li><a href="blog.html" class="text-gray-400 hover:text-purple-500 transition-colors">Blog</a></li>
+            <li><a href="contact_us.html" class="text-gray-400 hover:text-purple-500 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Resources -->
+        <div>
+          <h3 class="text-xl font-bold mb-6">Resources</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">FAQ</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">Support</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+        <!-- Newsletter -->
+        <div>
+          <h3 class="text-xl font-bold mb-6">Newsletter</h3>
+          <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
+          <form action="#">
+            <input type="email" placeholder="Your email" class="w-full p-3 rounded bg-gray-800 text-white mb-4" />
+            <button type="submit" class="btn-primary w-full">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="text-center">
+        <p class="text-gray-500">&copy; 2023 Veritexis. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+    });
+    
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('nav button.md\\:hidden');
+    const mobileMenu = document.querySelector('.fixed.inset-0.bg-black.bg-opacity-90.z-40');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelector('button').addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+    
+    // Custom Cursor
+    const cursor = document.querySelector('.cursor-glow');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+    });
+    
+    // Preloader
+    window.addEventListener('load', () => {
+      document.querySelector('.preloader').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
