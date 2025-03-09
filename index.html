@@ -1,451 +1,1203 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veritexis - Home</title>
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="bg-black text-white">
-  <!-- Preloader -->
-  <div class="preloader">
-    <div class="preloader-content">
-      <div class="preloader-logo">Veritexis</div>
-      <div class="preloader-spinner mx-auto"></div>
-    </div>
-  </div>
-
-  <!-- Custom Cursor -->
-  <div class="cursor-glow"></div>
-
-  <!-- Navbar -->
-  <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="/" class="text-2xl font-bold flex items-center">
-        <span class="text-3xl bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Veritexis</span>
-      </a>
-      <div class="hidden md:block">
-        <ul class="flex space-x-8">
-          <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="about_us.html" class="nav-link">About Us</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-          <li><a href="team.html" class="nav-link">Team</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
-          <li><a href="contact_us.html" class="nav-link">Contact</a></li>
-        </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veritexis - Home</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Logo styles */
+      .logo-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        /* background: linear-gradient(135deg, #6b46c1 0%, #3182ce 100%); */
+        border-radius: 8px;
+        margin-right: 10px;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+      
+      .logo-letter {
+        font-weight: bold;
+        color: white;
+        font-size: 20px;
+      }
+      
+      /* Enhanced navbar */
+      .enhanced-navbar {
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.7);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Enhanced hero section */
+      .hero-enhanced-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .hero-tagline {
+        font-weight: 300;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+      }
+      
+      .btn-primary {
+        background: linear-gradient(135deg, #6b46c1 0%, #3182ce 100%);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+      
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+      }
+      
+      /* Enhanced stats */
+      .stat-card {
+        background: rgba(26, 32, 44, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+      
+      .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        border-color: rgba(145, 70, 255, 0.3);
+      }
+      
+      /* Custom animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translate3d(0, 30px, 0);
+        }
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease forwards;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader-content">
+        <div class="preloader-logo">Veritexis</div>
+        <div class="preloader-spinner mx-auto"></div>
       </div>
-      <button class="md:hidden focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
     </div>
-  </nav>
 
-  <!-- Mobile Menu -->
-  <div class="fixed inset-0 bg-black bg-opacity-90 z-40 hidden">
-    <div class="flex flex-col h-full justify-center items-center text-2xl space-y-8">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about_us.html" class="nav-link">About Us</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="portfolio.html" class="nav-link">Portfolio</a>
-      <a href="team.html" class="nav-link">Team</a>
-      <a href="blog.html" class="nav-link">Blog</a>
-      <a href="contact_us.html" class="nav-link">Contact</a>
-      <button class="mt-8 focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-  </div>
+    <!-- Custom Cursor -->
+    <div class="cursor-glow"></div>
 
-  <!-- Hero Section -->
-  <header class="relative h-screen">
-    <div class="absolute inset-0 z-0">
-      <video autoplay loop muted class="w-full h-full object-cover">
-        <source src="assets/videos/5242-183786752_medium.mp4" type="video/mp4">
-      </video>
-      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    </div>
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-      <div class="hero-content" data-aos="zoom-in" data-aos-duration="1000">
-        <h1 class="text-5xl md:text-7xl font-bold mb-6">
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Veritexis</span>
-        </h1>
-        <p class="text-2xl md:text-3xl mb-8" data-aos="fade-up" data-aos-delay="300">
-          Innovative <span class="highlight">Solutions</span> for Your Business
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="600">
-          <a href="#contact" class="btn-primary px-8 py-4 rounded-lg text-lg font-semibold">Get Started</a>
-          <a href="#services" class="px-8 py-4 rounded-lg border border-white hover:border-purple-500 transition-all hover:text-purple-500">Our Services</a>
-        </div>
-      </div>
-      <div class="absolute bottom-10 left-0 right-0 text-center">
-        <a href="#intro" class="text-white hover:text-purple-500 transition-all duration-300 inline-block animate-bounce">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 enhanced-navbar" id="navbar">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="/" class="text-2xl font-bold flex items-center">
+          <div class="logo-icon">
+            <img src="assets/veritexis-v2-logo-removebg-preview.png" alt="Veritexis Logo" class="w-10 h-10 rounded-lg" />
+          </div>
+          <span
+            class="text-3xl bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500"
+            >Veritexis</span
+          >
         </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Introduction -->
-  <section id="intro" class="py-24 relative overflow-hidden">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-4" data-aos="fade-up">
-          Welcome to <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Veritexis</span>
-        </h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-12" data-aos="zoom-in" data-aos-delay="200"></div>
-        <p class="text-lg md:text-xl text-center leading-relaxed" data-aos="fade-up" data-aos-delay="300">
-          We believe in <span class="highlight">credibility</span>, innovation, and excellence. Our passion drives us to deliver cutting-edge solutions in mobile development, web development, and machine learning.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-            <div class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">120+</div>
-            <p class="mt-2 text-gray-300">Projects Completed</p>
-          </div>
-          <div class="text-center" data-aos="fade-up" data-aos-delay="500">
-            <div class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">98%</div>
-            <p class="mt-2 text-gray-300">Client Satisfaction</p>
-          </div>
-          <div class="text-center" data-aos="fade-up" data-aos-delay="600">
-            <div class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">15+</div>
-            <p class="mt-2 text-gray-300">Countries Served</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-purple-900 rounded-full opacity-10 blur-3xl"></div>
-    <div class="absolute -top-16 -left-16 w-72 h-72 bg-blue-900 rounded-full opacity-10 blur-3xl"></div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="py-24 bg-gray-900 relative">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4" data-aos="fade-up">Our Services</h2>
-      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-16" data-aos="zoom-in" data-aos-delay="200"></div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div class="service-card p-8" data-aos="flip-left" data-aos-delay="100">
-          <div class="service-icon mx-auto">
-            <i class="fas fa-mobile-alt text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-4 text-center">Mobile Development</h3>
-          <p class="text-center text-gray-300">
-            Stunning apps for iOS and Android with seamless <span class="highlight">performance</span> and intuitive user experience.
-          </p>
-          <ul class="mt-6 space-y-2">
-            <li class="flex items-center">
-              <i class="fas fa-check text-purple-500 mr-2"></i>
-              <span>Native & Cross-platform</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-purple-500 mr-2"></i>
-              <span>UI/UX Excellence</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-purple-500 mr-2"></i>
-              <span>Offline Capability</span>
-            </li>
+        <div class="hidden md:block">
+          <ul class="flex space-x-8">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="about_us.html" class="nav-link">About Us</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li><a href="team.html" class="nav-link">Team</a></li>
+            <li><a href="contact_us.html" class="nav-link">Contact</a></li>
           </ul>
-          <div class="mt-8 text-center">
-            <a href="#" class="text-purple-500 hover:text-purple-400 transition-all">Learn More →</a>
-          </div>
         </div>
-        <div class="service-card p-8" data-aos="flip-left" data-aos-delay="300">
-          <div class="service-icon mx-auto">
-            <i class="fas fa-laptop-code text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-4 text-center">Web Development</h3>
-          <p class="text-center text-gray-300">
-            Responsive, dynamic websites built with <span class="highlight">precision</span> and modern technologies.
-          </p>
-          <ul class="mt-6 space-y-2">
-            <li class="flex items-center">
-              <i class="fas fa-check text-purple-500 mr-2"></i>
-              <span>Responsive Design</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-purple-500 mr-2"></i>
-              <span>Full-stack Solutions</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-purple-500 mr-2"></i>
-              <span>E-commerce Platforms</span>
-            </li>
-          </ul>
-          <div class="mt-8 text-center">
-            <a href="#" class="text-purple-500 hover:text-purple-400 transition-all">Learn More →</a>
-          </div>
-        </div>
-        <div class="service-card p-8" data-aos="flip-left" data-aos-delay="500">
-          <div class="service-icon mx-auto">
-            <i class="fas fa-brain text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-4 text-center">Machine Learning</h3>
-          <p class="text-center text-gray-300">
-            Advanced ML solutions for <span class="highlight">growth</span> and insight into your business data.
-          </p>
-          <ul class="mt-6 space-y-2">
-            <li class="flex items-center">
-              <i class="fas fa-check text-purple-500 mr-2"></i>
-              <span>Predictive Analytics</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-purple-500 mr-2"></i>
-              <span>Image Recognition</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-check text-purple-500 mr-2"></i>
-              <span>NLP Solutions</span>
-            </li>
-          </ul>
-          <div class="mt-8 text-center">
-            <a href="#" class="text-purple-500 hover:text-purple-400 transition-all">Learn More →</a>
-          </div>
-        </div>
+        <button class="md:hidden focus:outline-none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 bg-black bg-opacity-90 z-40 hidden">
+      <div
+        class="flex flex-col h-full justify-center items-center text-2xl space-y-8"
+      >
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about_us.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="team.html" class="nav-link">Team</a>
+        <a href="contact_us.html" class="nav-link">Contact</a>
+        <button class="mt-8 focus:outline-none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
       </div>
     </div>
-    <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-purple-900 rounded-full opacity-10 blur-3xl"></div>
-  </section>
 
-  <!-- Recent Projects -->
-  <section class="py-24 relative">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4" data-aos="fade-up">Recent Projects</h2>
-      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-16" data-aos="zoom-in" data-aos-delay="200"></div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div class="project-card overflow-hidden" data-aos="zoom-in" data-aos-delay="100">
-          <div class="relative overflow-hidden">
-            <img src="assets/images/project1.jpg" alt="Project 1" class="w-full h-64 object-cover">
-            <div class="project-overlay">
-              <a href="#" class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all">
-                <i class="fas fa-external-link-alt text-white"></i>
-              </a>
-            </div>
-          </div>
-          <div class="p-6">
-            <div class="flex justify-between items-center mb-4">
-              <h3 class="text-xl font-bold">FitTrack App</h3>
-              <span class="px-3 py-1 bg-purple-900 text-xs rounded-full">Mobile</span>
-            </div>
-            <p class="text-gray-300">A fitness app with real-time <span class="highlight">tracking</span> for enthusiasts.</p>
-            <div class="mt-6 flex justify-between items-center">
-              <div class="flex space-x-2">
-                <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-purple-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-pink-500 rounded-full"></span>
-              </div>
-              <a href="#" class="text-purple-500 hover:text-purple-400 transition-all">View Details →</a>
-            </div>
-          </div>
-        </div>
-        <div class="project-card overflow-hidden" data-aos="zoom-in" data-aos-delay="300">
-          <div class="relative overflow-hidden">
-            <img src="assets/images/project2.jpg" alt="Project 2" class="w-full h-64 object-cover">
-            <div class="project-overlay">
-              <a href="#" class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all">
-                <i class="fas fa-external-link-alt text-white"></i>
-              </a>
-            </div>
-          </div>
-          <div class="p-6">
-            <div class="flex justify-between items-center mb-4">
-              <h3 class="text-xl font-bold">E-Shop Dashboard</h3>
-              <span class="px-3 py-1 bg-purple-900 text-xs rounded-full">Web</span>
-            </div>
-            <p class="text-gray-300">A web platform for managing <span class="highlight">sales</span> effortlessly.</p>
-            <div class="mt-6 flex justify-between items-center">
-              <div class="flex space-x-2">
-                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-              </div>
-              <a href="#" class="text-purple-500 hover:text-purple-400 transition-all">View Details →</a>
-            </div>
-          </div>
-        </div>
-        <div class="project-card overflow-hidden" data-aos="zoom-in" data-aos-delay="500">
-          <div class="relative overflow-hidden">
-            <img src="assets/images/project3.jpg" alt="Project 3" class="w-full h-64 object-cover">
-            <div class="project-overlay">
-              <a href="#" class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all">
-                <i class="fas fa-external-link-alt text-white"></i>
-              </a>
-            </div>
-          </div>
-          <div class="p-6">
-            <div class="flex justify-between items-center mb-4">
-              <h3 class="text-xl font-bold">Smart Analytics</h3>
-              <span class="px-3 py-1 bg-purple-900 text-xs rounded-full">ML/AI</span>
-            </div>
-            <p class="text-gray-300">ML-driven insights for <span class="highlight">business growth</span>.</p>
-            <div class="mt-6 flex justify-between items-center">
-              <div class="flex space-x-2">
-                <span class="w-3 h-3 bg-indigo-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
-                <span class="w-3 h-3 bg-cyan-500 rounded-full"></span>
-              </div>
-              <a href="#" class="text-purple-500 hover:text-purple-400 transition-all">View Details →</a>
-            </div>
-          </div>
-        </div>
+    <!-- Hero Section -->
+    <header class="relative h-screen">
+      <div class="absolute inset-0 z-0">
+        <video autoplay loop muted class="w-full h-full object-cover">
+          <source
+            src="assets/videos/7890_Particles_Particle_1920x1080.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
       </div>
-      <div class="text-center mt-16" data-aos="fade-up">
-        <a href="/portfolio.html" class="btn-primary px-8 py-3 rounded-lg inline-block">View All Projects</a>
-      </div>
-    </div>
-    <div class="absolute -top-16 -right-16 w-64 h-64 bg-blue-900 rounded-full opacity-10 blur-3xl"></div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="py-24 bg-gray-900 relative">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4" data-aos="fade-up">Client Reviews</h2>
-      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-24" data-aos="zoom-in" data-aos-delay="200"></div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div class="review-card p-8" data-aos="fade-up" data-aos-delay="100">
-          <img src="assets/images/client1.jpg" alt="Client" class="client-img">
-          <div class="client-info mt-4">
-            <h3 class="text-2xl font-bold">Alex Carter</h3>
-            <p class="text-gray-400">CEO, FitLife Inc.</p>
-          </div>
-          <p class="mt-4 text-gray-300">
-            "Veritexis transformed our business with innovative solutions and unparalleled expertise."
+      <div
+        class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4"
+      >
+        <div class="hero-enhanced-content" data-aos="zoom-in" data-aos-duration="1000">
+          <p class="text-purple-300 uppercase tracking-widest mb-2 hero-tagline fade-in-up">Innovative Technology Solutions</p>
+          <h1 class="text-5xl md:text-7xl font-bold mb-6">
+            <div class="flex items-center justify-center mb-4">
+              <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500 ml-3"
+                >Veritexis</span
+              >
+            </div>
+          </h1>
+          <p
+            class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            Transforming businesses through <span class="highlight">innovative technology</span> and <span class="highlight">strategic solutions</span> that drive growth and enhance performance.
           </p>
-        </div>
-        <div class="review-card p-8" data-aos="fade-up" data-aos-delay="200">
-          <img src="assets/images/client2.jpg" alt="Client" class="client-img">
-          <div class="client-info mt-4">
-            <h3 class="text-2xl font-bold">Sarah Lee</h3>
-            <p class="text-gray-400">Founder, ShopEasy</p>
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <a
+              href="#contact"
+              class="btn-primary px-8 py-4 rounded-lg text-lg font-semibold"
+              >Get Started</a
+            >
+            <a
+              href="#services"
+              class="px-8 py-4 rounded-lg border border-white hover:border-purple-500 transition-all hover:text-purple-500"
+              >Explore Services</a
+            >
           </div>
-          <p class="mt-4 text-gray-300">
-            "Their creativity and commitment to excellence is truly commendable."
-          </p>
         </div>
-        <div class="review-card p-8" data-aos="fade-up" data-aos-delay="300">
-          <img src="assets/images/client3.jpg" alt="Client" class="client-img">
-          <div class="client-info mt-4">
-            <h3 class="text-2xl font-bold">Tom Brown</h3>
-            <p class="text-gray-400">CTO, DataWorks</p>
-          </div>
-          <p class="mt-4 text-gray-300">
-            "An exceptional team that delivers outstanding results every time."
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="absolute -bottom-16 -right-16 w-64 h-64 bg-purple-900 rounded-full opacity-10 blur-3xl"></div>
-  </section>
-
-  <!-- Call to Action -->
-  <section id="contact" class="py-24 bg-black">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">Ready to Get Started?</h2>
-      <p class="text-lg text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
-        Let's transform your business with innovative solutions. Contact us today!
-      </p>
-      <a href="contact_us.html" class="btn-primary px-8 py-4 rounded-lg text-lg font-semibold" data-aos="fade-up" data-aos-delay="300">Contact Us</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 pt-16 pb-8">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
-        <!-- Branding & Social -->
-        <div>
-          <a href="/" class="text-2xl font-bold mb-6 block">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Veritexis</span>
+        <div class="absolute bottom-10 left-0 right-0 text-center">
+          <a
+            href="#intro"
+            class="text-white hover:text-purple-500 transition-all duration-300 inline-block animate-bounce"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
           </a>
-          <p class="text-gray-400 mb-6">
-            Innovative solutions for your business, delivered with expertise and passion.
+        </div>
+      </div>
+    </header>
+
+    <!-- Introduction -->
+    <section id="intro" class="py-24 relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2
+            class="text-4xl md:text-5xl font-bold text-center mb-4"
+            data-aos="fade-up"
+          >
+            Welcome to
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500"
+              >Veritexis</span
+            >
+          </h2>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-12"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          ></div>
+          <p
+            class="text-lg md:text-xl text-center leading-relaxed"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            We believe in <span class="highlight">credibility</span>,
+            innovation, and excellence. Our passion drives us to deliver
+            cutting-edge solutions in mobile development, web development, and
+            machine learning.
           </p>
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+              <div
+                class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500 text-center"
+              >
+                50+
+              </div>
+              <p class="mt-2 text-gray-300 text-center">Projects Completed</p>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="500">
+              <div
+                class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500 text-center"
+              >
+                94%
+              </div>
+              <p class="mt-2 text-gray-300 text-center">Client Satisfaction</p>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="600">
+              <div
+                class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500 text-center"
+              >
+                3+
+              </div>
+              <p class="mt-2 text-gray-300 text-center">Countries Served</p>
+            </div>
           </div>
         </div>
-        <!-- Quick Links -->
-        <div>
-          <h3 class="text-xl font-bold mb-6">Quick Links</h3>
-          <ul class="space-y-3">
-            <li><a href="index.html" class="text-gray-400 hover:text-purple-500 transition-colors">Home</a></li>
-            <li><a href="about_us.html" class="text-gray-400 hover:text-purple-500 transition-colors">About Us</a></li>
-            <li><a href="/services.html" class="text-gray-400 hover:text-purple-500 transition-colors">Services</a></li>
-            <li><a href="/portfolio.html" class="text-gray-400 hover:text-purple-500 transition-colors">Portfolio</a></li>
-            <li><a href="/team.html" class="text-gray-400 hover:text-purple-500 transition-colors">Team</a></li>
-            <li><a href="blog.html" class="text-gray-400 hover:text-purple-500 transition-colors">Blog</a></li>
-            <li><a href="contact_us.html" class="text-gray-400 hover:text-purple-500 transition-colors">Contact</a></li>
-          </ul>
-        </div>
-        <!-- Resources -->
-        <div>
-          <h3 class="text-xl font-bold mb-6">Resources</h3>
-          <ul class="space-y-3">
-            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">FAQ</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">Support</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">Privacy Policy</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">Terms of Service</a></li>
-          </ul>
-        </div>
-        <!-- Newsletter -->
-        <div>
-          <h3 class="text-xl font-bold mb-6">Newsletter</h3>
-          <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
-          <form action="#">
-            <input type="email" placeholder="Your email" class="w-full p-3 rounded bg-gray-800 text-white mb-4" />
-            <button type="submit" class="btn-primary w-full">Subscribe</button>
-          </form>
+      </div>
+      <div
+        class="absolute -bottom-16 -left-16 w-64 h-64 bg-purple-900 rounded-full opacity-10 blur-3xl"
+      ></div>
+      <div
+        class="absolute -top-16 -left-16 w-72 h-72 bg-blue-900 rounded-full opacity-10 blur-3xl"
+      ></div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-24 bg-gray-900 relative">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-4xl md:text-5xl font-bold text-center mb-4"
+          data-aos="fade-up"
+        >
+          Our Services
+        </h2>
+        <div
+          class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-16"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        ></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- Mobile Development -->
+          <div
+            class="service-card p-8"
+            data-aos="flip-left"
+            data-aos-delay="100"
+          >
+            <div class="service-icon mx-auto">
+              <i class="fas fa-mobile-alt text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-center">
+              Mobile Development
+            </h3>
+            <p class="text-center text-gray-300">
+              Lightning-fast, responsive and scalable apps for iOS and
+              Android—crafted for your business.
+            </p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Native & Cross-platform</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>High Performance</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Intuitive UX/UI</span>
+              </li>
+            </ul>
+          </div>
+          <!-- Web Development -->
+          <div
+            class="service-card p-8"
+            data-aos="flip-left"
+            data-aos-delay="200"
+          >
+            <div class="service-icon mx-auto">
+              <i class="fas fa-laptop-code text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-center">Web Development</h3>
+            <p class="text-center text-gray-300">
+              Fast, dynamic and SEO-friendly websites built with modern tech to
+              boost your online presence.
+            </p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Responsive Design</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Full-stack Solutions</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Fast and Scalable</span>
+              </li>
+            </ul>
+          </div>
+          <!-- Machine Learning & AI -->
+          <div
+            class="service-card p-8"
+            data-aos="flip-left"
+            data-aos-delay="300"
+          >
+            <div class="service-icon mx-auto">
+              <i class="fas fa-brain text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-center">
+              Machine Learning & AI
+            </h3>
+            <p class="text-center text-gray-300">
+              Intelligent AI solutions—from predictive analytics to custom
+              chatbots—that drive business innovation.
+            </p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Custom AI Chatbots</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Data-Driven Insights</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Seamless Integration</span>
+              </li>
+            </ul>
+          </div>
+          <!-- SEO & Digital Marketing -->
+          <div
+            class="service-card p-8"
+            data-aos="flip-left"
+            data-aos-delay="400"
+          >
+            <div class="service-icon mx-auto">
+              <i class="fas fa-search text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-center">
+              SEO & Digital Marketing
+            </h3>
+            <p class="text-center text-gray-300">
+              Boost your online reach with tailored SEO strategies and digital
+              marketing solutions that drive traffic.
+            </p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Keyword Optimization</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Content Strategy</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Analytics & Reporting</span>
+              </li>
+            </ul>
+          </div>
+          <!-- Game Development -->
+          <div
+            class="service-card p-8"
+            data-aos="flip-left"
+            data-aos-delay="500"
+          >
+            <div class="service-icon mx-auto">
+              <i class="fas fa-gamepad text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-center">
+              Game Development
+            </h3>
+            <p class="text-center text-gray-300">
+              Immersive and engaging games designed with cutting-edge technology
+              for diverse platforms.
+            </p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>2D & 3D Games</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Cross-platform Play</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>High-end Graphics</span>
+              </li>
+            </ul>
+          </div>
+          <!-- Automation Solutions -->
+          <div
+            class="service-card p-8"
+            data-aos="flip-left"
+            data-aos-delay="600"
+          >
+            <div class="service-icon mx-auto">
+              <i class="fas fa-robot text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-center">
+              Automation Solutions
+            </h3>
+            <p class="text-center text-gray-300">
+              Streamline your operations with smart automation tools that boost
+              efficiency and cut costs.
+            </p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Process Automation</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Workflow Optimization</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Cost Efficiency</span>
+              </li>
+            </ul>
+          </div>
+          <!-- AI Chatbots -->
+          <div
+            class="service-card p-8"
+            data-aos="flip-left"
+            data-aos-delay="700"
+          >
+            <div class="service-icon mx-auto">
+              <i class="fas fa-comments text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-center">AI Chatbots</h3>
+            <p class="text-center text-gray-300">
+              Enhance customer engagement with AI-powered chatbots that provide
+              instant, intelligent support 24/7.
+            </p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>24/7 Support</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Conversational AI</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Custom Solutions</span>
+              </li>
+            </ul>
+          </div>
+          <!-- Integrations & Custom Designs -->
+          <div
+            class="service-card p-8"
+            data-aos="flip-left"
+            data-aos-delay="800"
+          >
+            <div class="service-icon mx-auto">
+              <i class="fas fa-puzzle-piece text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-center">
+              Integrations & Custom Designs
+            </h3>
+            <p class="text-center text-gray-300">
+              Seamlessly integrate third-party services and elevate your digital
+              presence with custom, AI-powered designs.
+            </p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Third-party Integrations</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Custom UI/UX</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>AI-Powered Enhancements</span>
+              </li>
+            </ul>
+          </div>
+          <!-- Video Editor -->
+          <div
+            class="service-card p-8"
+            data-aos="flip-left"
+            data-aos-delay="900"
+          >
+            <div class="service-icon mx-auto">
+              <i class="fas fa-film text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-center">Video Editor</h3>
+            <p class="text-center text-gray-300">
+              Craft stunning videos with our intuitive, high-performance editing
+              tools that empower your creativity.
+            </p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Intuitive Interface</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Multi-format Support</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-500 mr-2"></i>
+                <span>Real-time Previews</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="text-center">
-        <p class="text-gray-500">&copy; 2023 Veritexis. All rights reserved.</p>
+      <div
+        class="absolute -bottom-16 -left-16 w-64 h-64 bg-purple-900 rounded-full opacity-10 blur-3xl"
+      ></div>
+    </section>
+
+    <!-- Recent Projects -->
+    <section class="py-24 relative">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-4xl md:text-5xl font-bold text-center mb-4"
+          data-aos="fade-up"
+        >
+          Recent Projects
+        </h2>
+        <div
+          class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-16"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        ></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <!-- Project 1: Food Allergy Detection – AI Project -->
+          <div
+            class="project-card overflow-hidden"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="assets/projects/project-1/p-1-landscape.png"
+                alt="Food Allergy Detection"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="project-overlay absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="view-details bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all"
+                  data-title="Food Allergy Detection – AI Project"
+                  data-description="Imagine snapping a photo of your meal and instantly knowing if it’s safe to eat! This AI-powered project uses advanced computer vision to analyze food images, detect ingredients, and flag potential allergens. By leveraging OpenCV and Tesseract OCR, it processes visuals and text with pinpoint accuracy, cross-referencing them against a detailed CSV database of allergenic ingredients using fuzzy matching. The result? A sleek, user-friendly Tkinter GUI that delivers real-time alerts, empowering users to dine with confidence. Perfect for allergy sufferers and health-conscious foodies alike!"
+                >
+                  <i class="fas fa-external-link-alt text-white"></i>
+                </a>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Food Allergy Detection</h3>
+                <span class="px-3 py-1 bg-purple-900 text-xs rounded-full"
+                  >AI/ML</span
+                >
+              </div>
+              <p class="text-gray-300">
+                Snap a pic, spot allergens—eat worry-free with AI precision.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 2: Fact Checking App -->
+          <div
+            class="project-card overflow-hidden"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="assets/images/fact_checking_app.jpg"
+                alt="Fact Checking App"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="project-overlay absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="view-details bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all"
+                  data-title="Fact Checking App"
+                  data-description="In a world buzzing with information, how do you separate fact from fiction? Enter this ingenious mobile app! Built with React Native and powered by a Python Flask backend, it lets users submit claims and get instant credibility scores. The app scrapes trusted online sources, harnesses the OpenAI GPT API for razor-sharp text analysis, and delivers results in a stunning, animated interface (thanks to Moti!). With Firebase authentication, Google Sign-In, and JWT token security, it’s as robust as it is beautiful. Truth-seekers, rejoice—this is your new best friend!"
+                >
+                  <i class="fas fa-external-link-alt text-white"></i>
+                </a>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Fact Checking App</h3>
+                <span class="px-3 py-1 bg-purple-900 text-xs rounded-full"
+                  >Mobile</span
+                >
+              </div>
+              <p class="text-gray-300">
+                Verify claims on the go with AI-driven truth detection.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 3: DGBCF for CDA Islamabad -->
+          <div
+            class="project-card overflow-hidden"
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="assets/images/dgbcf_app.jpg"
+                alt="DGBCF"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="project-overlay absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="view-details bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all"
+                  data-title="DGBCF – Digital Real Estate App"
+                  data-description="Step into the future of real estate with DGBCF, a digital marvel crafted for CDA Islamabad! This app brings properties to life with a zoomable, interactive map where users can explore clickable blocks—each revealing vivid plot images and editable details. Powered by Firebase, it ensures real-time data sync, making property management smooth and instantaneous. Whether you’re a buyer, seller, or agent, this app transforms the real estate experience into something dynamic, intuitive, and downright impressive!"
+                  data-images='["assets/images/dgbcf_screen1.jpg", "assets/images/dgbcf_screen2.jpg"]'
+                >
+                  <i class="fas fa-external-link-alt text-white"></i>
+                </a>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">DGBCF</h3>
+                <span class="px-3 py-1 bg-purple-900 text-xs rounded-full"
+                  >Web/Mobile</span
+                >
+              </div>
+              <p class="text-gray-300">
+                Explore real estate like never before with interactive maps.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 4: MacromasterAI -->
+          <div
+            class="project-card overflow-hidden"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="assets/images/macromaster_ai.jpg"
+                alt="MacromasterAI"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="project-overlay absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="view-details bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all"
+                  data-title="MacromasterAI – Health Companion"
+                  data-description="Say hello to MacromasterAI, your personal health guru in app form! Built with Flutter for silky-smooth cross-platform performance, this AI-driven gem helps you master your diet with calorie tracking, a handy calendar, and real-time data streaming via Firebase. The star of the show? An integrated chatbot dishing out tailored health advice—whether you’re aiming to slim down or bulk up. With Google and Facebook login options, it’s as accessible as it is powerful. Health goals? Consider them crushed!"
+                  data-images='["assets/images/macromaster_screen1.jpg", "assets/images/macromaster_screen2.jpg"]'
+                >
+                  <i class="fas fa-external-link-alt text-white"></i>
+                </a>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">MacromasterAI</h3>
+                <span class="px-3 py-1 bg-purple-900 text-xs rounded-full"
+                  >Mobile</span
+                >
+              </div>
+              <p class="text-gray-300">
+                Your AI diet coach for a healthier, happier you.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 5: JobVortex -->
+          <div
+            class="project-card overflow-hidden"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="assets/images/jobvortex.jpg"
+                alt="JobVortex"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="project-overlay absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="view-details bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all"
+                  data-title="JobVortex – Service Connector"
+                  data-description="Need a plumber, maid, or electrician fast? JobVortex has you covered! This Flutter-built app connects you to trusted service providers with just a tap—no market trips required. Backed by Firebase for real-time updates, it delivers a seamless, doorstep service experience. From urgent fixes to routine chores, JobVortex redefines convenience with its clean design and reliable performance. Household help has never been this easy—or this cool!"
+                  data-images='["assets/images/jobvortex_screen1.jpg", "assets/images/jobvortex_screen2.jpg"]'
+                >
+                  <i class="fas fa-external-link-alt text-white"></i>
+                </a>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">JobVortex</h3>
+                <span class="px-3 py-1 bg-purple-900 text-xs rounded-full"
+                  >Mobile</span
+                >
+              </div>
+              <p class="text-gray-300">
+                Call pros to your door—hassle-free service at its finest.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-16" data-aos="fade-up">
+          <a
+            href="portfolio.html"
+            class="btn-primary px-8 py-3 rounded-lg inline-block"
+            >View All Projects</a
+          >
+        </div>
+      </div>
+      <div
+        class="absolute -top-16 -right-16 w-64 h-64 bg-blue-900 rounded-full opacity-10 blur-3xl"
+      ></div>
+    </section>
+
+    <!-- Project Modal -->
+    <div
+      id="projectModal"
+      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 hidden z-50 transition-opacity duration-300 transform opacity-0 scale-95"
+    >
+      <div
+        class="bg-gray-800 p-8 rounded-lg w-11/12 md:w-3/4 lg:w-1/2 relative max-h-[90vh] overflow-y-auto"
+      >
+        <button
+          id="modalClose"
+          class="absolute top-2 right-2 text-white text-2xl"
+          aria-label="Close Modal"
+        >
+          &times;
+        </button>
+        <h3 class="text-3xl font-bold mb-4" id="modalTitle">Project Title</h3>
+        <p class="text-gray-300 mb-6" id="modalDescription">
+          Project description goes here.
+        </p>
+        <!-- Remove or comment out the images container:
+  <div class="grid grid-cols-2 gap-4" id="modalImages"></div>
+  -->
       </div>
     </div>
-  </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: true,
-    });
-    // Mobile menu toggle
-    const mobileMenuBtn = document.querySelector('nav button.md\\:hidden');
-    const mobileMenu = document.querySelector('.fixed.inset-0.bg-black.bg-opacity-90.z-40');
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-    mobileMenu.querySelector('button').addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-    });
-    // Custom Cursor
-    const cursor = document.querySelector('.cursor-glow');
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = e.pageX + 'px';
-      cursor.style.top = e.pageY + 'px';
-    });
-    // Preloader
-    window.addEventListener('load', () => {
-      document.querySelector('.preloader').style.display = 'none';
-    });
-  </script>
-</body>
+    <!-- Testimonials -->
+    <section class="py-24 bg-gray-900 relative">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-4xl md:text-5xl font-bold text-center mb-4"
+          data-aos="fade-up"
+        >
+          Client Reviews
+        </h2>
+        <div
+          class="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-24"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        ></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div class="review-card p-8" data-aos="fade-up" data-aos-delay="100">
+            <img
+              src="assets/images/client1.jpg"
+              alt="Client"
+              class="client-img"
+            />
+            <div class="client-info mt-4">
+              <h3 class="text-2xl font-bold">Alex Carter</h3>
+              <p class="text-gray-400">CEO, FitLife Inc.</p>
+            </div>
+            <p class="mt-4 text-gray-300">
+              "Veritexis transformed our business with innovative solutions and
+              unparalleled expertise."
+            </p>
+          </div>
+          <div class="review-card p-8" data-aos="fade-up" data-aos-delay="200">
+            <img
+              src="assets/images/client2.jpg"
+              alt="Client"
+              class="client-img"
+            />
+            <div class="client-info mt-4">
+              <h3 class="text-2xl font-bold">Sarah Lee</h3>
+              <p class="text-gray-400">Founder, ShopEasy</p>
+            </div>
+            <p class="mt-4 text-gray-300">
+              "Their creativity and commitment to excellence is truly
+              commendable."
+            </p>
+          </div>
+          <div class="review-card p-8" data-aos="fade-up" data-aos-delay="300">
+            <img
+              src="assets/images/client3.jpg"
+              alt="Client"
+              class="client-img"
+            />
+            <div class="client-info mt-4">
+              <h3 class="text-2xl font-bold">Tom Brown</h3>
+              <p class="text-gray-400">CTO, DataWorks</p>
+            </div>
+            <p class="mt-4 text-gray-300">
+              "An exceptional team that delivers outstanding results every
+              time."
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute -bottom-16 -right-16 w-64 h-64 bg-purple-900 rounded-full opacity-10 blur-3xl"
+      ></div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="contact" class="py-24 bg-black">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
+          Ready to Get Started?
+        </h2>
+        <p
+          class="text-lg text-gray-300 mb-8"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Let's transform your business with innovative solutions. Contact us
+          today!
+        </p>
+        <a
+          href="contact_us.html"
+          class="btn-primary px-8 py-4 rounded-lg text-lg font-semibold"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          >Contact Us</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+          <!-- Branding & Social -->
+          <div>
+            <a href="/" class="text-2xl font-bold mb-6 block">
+              <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500"
+                >Veritexis</span
+              >
+            </a>
+            <p class="text-gray-400 mb-6">
+              Innovative solutions for your business, delivered with expertise
+              and passion.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-purple-500 transition-colors"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-purple-500 transition-colors"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-purple-500 transition-colors"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-purple-500 transition-colors"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about_us.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/services.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/portfolio.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/team.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blog.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact_us.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Resources -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Resources</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Support</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Newsletter -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Subscribe to our newsletter for the latest updates.
+            </p>
+            <form action="#">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="w-full p-3 rounded bg-gray-800 text-white mb-4"
+              />
+              <button type="submit" class="btn-primary w-full">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="text-center">
+          <p class="text-gray-500">
+            &copy; 2023 Veritexis. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+      // Mobile menu toggle
+      const mobileMenuBtn = document.querySelector("nav button.md\\:hidden");
+      const mobileMenu = document.querySelector(
+        ".fixed.inset-0.bg-black.bg-opacity-90.z-40"
+      );
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+      mobileMenu.querySelector("button").addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+      // Custom Cursor
+      const cursor = document.querySelector(".cursor-glow");
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.pageX + "px";
+        cursor.style.top = e.pageY + "px";
+      });
+      // Preloader
+      window.addEventListener("load", () => {
+        document.querySelector(".preloader").style.display = "none";
+      });
+
+      const modal = document.getElementById("projectModal");
+      const modalClose = document.getElementById("modalClose");
+
+      // Function to open modal with animation
+      function openModal(link) {
+        // Get data attributes from the clicked link
+        const title = link.getAttribute("data-title");
+        const description = link.getAttribute("data-description");
+        // const images = JSON.parse(link.getAttribute("data-images"));
+
+        // Update modal content
+        document.getElementById("modalTitle").innerText = title;
+        document.getElementById("modalDescription").innerText = description;
+        // const modalImagesContainer = document.getElementById("modalImages");
+        // modalImagesContainer.innerHTML = "";
+        // images.forEach((src) => {
+        //   const img = document.createElement("img");
+        //   img.src = src;
+        //   img.alt = title;
+        //   img.className = "w-full h-auto rounded";
+        //   modalImagesContainer.appendChild(img);
+        // });
+
+        // Remove "hidden" and force a reflow so the transition will run
+        modal.classList.remove("hidden");
+        // Force reflow
+        void modal.offsetWidth;
+
+        // Add classes to animate modal to full opacity and scale
+        modal.classList.remove("opacity-0", "scale-95");
+        modal.classList.add("opacity-100", "scale-100");
+      }
+
+      // Function to close modal with animation
+      function closeModal() {
+        // Reverse the animation
+        modal.classList.remove("opacity-100", "scale-100");
+        modal.classList.add("opacity-0", "scale-95");
+
+        // Wait for the transition to end before hiding
+        setTimeout(() => {
+          modal.classList.add("hidden");
+        }, 300); // 300ms matches the duration-300 class
+      }
+
+      // Attach event listeners to all "View Details" links
+      document.querySelectorAll(".view-details").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          openModal(this);
+        });
+      });
+
+      // Close modal on clicking the close button
+      modalClose.addEventListener("click", closeModal);
+
+      // Optional: close modal when clicking outside the modal content
+      window.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+    </script>
+  </body>
 </html>

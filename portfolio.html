@@ -1,808 +1,1069 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veritexis - Portfolio</title>
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <!-- <link rel="stylesheet" href="css/style.css"> -->
-   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veritexis - Portfolio</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-:root {
-  --primary: #9333ea;
-  --primary-light: #a855f7;
-  --primary-dark: #7e22ce;
-  --secondary: #3b82f6;
-  --secondary-dark: #2563eb;
-  --accent: #f59e0b;
-  --dark: #111111;
-  --darker: #050505;
-  --light: #ffffff;
-  --gray-dark: #1f1f1f;
-  --gray-medium: #2d2d2d;
-  --gray-light: #3d3d3d;
-}
+      :root {
+        --primary: #9333ea;
+        --primary-light: #a855f7;
+        --primary-dark: #7e22ce;
+        --secondary: #3b82f6;
+        --secondary-dark: #2563eb;
+        --accent: #f59e0b;
+        --dark: #111111;
+        --darker: #050505;
+        --light: #ffffff;
+        --gray-dark: #1f1f1f;
+        --gray-medium: #2d2d2d;
+        --gray-light: #3d3d3d;
+      }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--dark);
-  color: var(--light);
-  overflow-x: hidden;
-}
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--dark);
+        color: var(--light);
+        overflow-x: hidden;
+      }
 
-/* ===== Scrollbar ===== */
-::-webkit-scrollbar {
-  width: 8px;
-}
+      /* ===== Scrollbar ===== */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
 
-::-webkit-scrollbar-track {
-  background: var(--darker);
-}
+      ::-webkit-scrollbar-track {
+        background: var(--darker);
+      }
 
-::-webkit-scrollbar-thumb {
-  background: var(--primary-dark);
-  border-radius: 10px;
-}
+      ::-webkit-scrollbar-thumb {
+        background: var(--primary-dark);
+        border-radius: 10px;
+      }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
-}
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--primary);
+      }
 
-/* ===== Typography ===== */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-}
+      /* ===== Typography ===== */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
 
-/* ===== Navigation ===== */
-.nav-link {
-  position: relative;
-  font-weight: 500;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 0.5rem 0;
-}
+      /* ===== Navigation ===== */
+      .nav-link {
+        position: relative;
+        font-weight: 500;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        padding: 0.5rem 0;
+      }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
 
-.nav-link:hover {
-  transform: translateY(-2px);
-  color: var(--primary-light);
-}
+      .nav-link:hover {
+        transform: translateY(-2px);
+        color: var(--primary-light);
+      }
 
-.nav-link:hover::after {
-  width: 100%;
-}
+      .nav-link:hover::after {
+        width: 100%;
+      }
 
-.nav-link.active {
-  color: var(--primary-light);
-}
+      .nav-link.active {
+        color: var(--primary-light);
+      }
 
-.nav-link.active::after {
-  width: 100%;
-}
+      .nav-link.active::after {
+        width: 100%;
+      }
 
-#navbar {
-  transition: all 0.5s ease;
-}
+      #navbar {
+        transition: all 0.5s ease;
+      }
 
-.sticky-nav {
-  backdrop-filter: blur(15px);
-  background-color: rgba(5, 5, 5, 0.85);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
-}
+      .sticky-nav {
+        backdrop-filter: blur(15px);
+        background-color: rgba(5, 5, 5, 0.85);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+      }
 
-/* ===== Hero Section ===== */
-header {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--darker) 0%, var(--gray-dark) 100%);
-}
+      /* ===== Hero Section ===== */
+      header {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          var(--darker) 0%,
+          var(--gray-dark) 100%
+        );
+      }
 
-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 25% 25%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
-              radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
-  z-index: 0;
-}
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 25% 25%,
+            rgba(147, 51, 234, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 75% 75%,
+            rgba(59, 130, 246, 0.15) 0%,
+            transparent 50%
+          );
+        z-index: 0;
+      }
 
-/* ===== Portfolio Filter ===== */
-.filter-btn {
-  background: linear-gradient(90deg, var(--gray-medium), var(--gray-dark));
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
-}
+      /* ===== Portfolio Filter ===== */
+      .filter-btn {
+        background: linear-gradient(
+          90deg,
+          var(--gray-medium),
+          var(--gray-dark)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+        overflow: hidden;
+      }
 
-.filter-btn:hover, .filter-btn.active {
-  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px -5px rgba(147, 51, 234, 0.5);
-}
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px -5px rgba(147, 51, 234, 0.5);
+      }
 
-.filter-btn::before {
-  content: '';
-  position: absolute;
-  left: -100%;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: all 0.6s ease;
-}
+      .filter-btn::before {
+        content: "";
+        position: absolute;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: all 0.6s ease;
+      }
 
-.filter-btn:hover::before {
-  left: 100%;
-}
+      .filter-btn:hover::before {
+        left: 100%;
+      }
 
-/* ===== Project Cards ===== */
-.project-card {
-  background: var(--gray-medium);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  transform-style: preserve-3d;
-}
+      /* ===== Project Cards ===== */
+      .project-card {
+        background: var(--gray-medium);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+        transform-style: preserve-3d;
+      }
 
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(147, 51, 234, 0.1), transparent);
-  transform: translateZ(-1px);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(147, 51, 234, 0.1),
+          transparent
+        );
+        transform: translateZ(-1px);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
 
-.project-card:hover {
-  transform: translateY(-15px) rotateX(5deg) rotateY(-5deg);
-  box-shadow: 20px 20px 40px -20px rgba(0, 0, 0, 0.7), 
-              inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-              0 0 20px rgba(147, 51, 234, 0.4);
-}
+      .project-card:hover {
+        transform: translateY(-15px) rotateX(5deg) rotateY(-5deg);
+        box-shadow: 20px 20px 40px -20px rgba(0, 0, 0, 0.7),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+          0 0 20px rgba(147, 51, 234, 0.4);
+      }
 
-.project-card:hover::before {
-  opacity: 1;
-}
+      .project-card:hover::before {
+        opacity: 1;
+      }
 
-.project-card:hover img {
-  transform: scale(1.1) translateZ(0);
-  filter: brightness(0.8) saturate(1.2);
-}
+      .project-card:hover img {
+        transform: scale(1.1) translateZ(0);
+        filter: brightness(0.8) saturate(1.2);
+      }
 
-.project-card img {
-  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: brightness(0.9) saturate(0.8);
-}
+      .project-card img {
+        transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        filter: brightness(0.9) saturate(0.8);
+      }
 
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
+      .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
 
-.project-card:hover .project-overlay {
-  opacity: 1;
-  transform: translateY(0);
-}
+      .project-card:hover .project-overlay {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-.project-overlay a {
-  transition: all 0.3s ease;
-  transform: scale(0.8);
-}
+      .project-overlay a {
+        transition: all 0.3s ease;
+        transform: scale(0.8);
+      }
 
-.project-card:hover .project-overlay a {
-  transform: scale(1);
-}
+      .project-card:hover .project-overlay a {
+        transform: scale(1);
+      }
 
-.project-card .category-badge {
-  position: relative;
-  overflow: hidden;
-  z-index: 2;
-}
+      .project-card .category-badge {
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+      }
 
-.project-card .category-badge::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
-  z-index: -1;
-  transition: all 0.3s ease;
-}
+      .project-card .category-badge::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+        z-index: -1;
+        transition: all 0.3s ease;
+      }
 
-.project-card:hover .category-badge::before {
-  filter: brightness(1.2);
-}
+      .project-card:hover .category-badge::before {
+        filter: brightness(1.2);
+      }
 
-/* ===== Project Card Content Animation ===== */
-.project-card .p-6 {
-  position: relative;
-  z-index: 2;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
+      /* ===== Project Card Content Animation ===== */
+      .project-card .p-6 {
+        position: relative;
+        z-index: 2;
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
 
-.project-card:hover .p-6 {
-  transform: translateY(-5px);
-}
+      .project-card:hover .p-6 {
+        transform: translateY(-5px);
+      }
 
-.project-card h3 {
-  position: relative;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
+      .project-card h3 {
+        position: relative;
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
 
-.project-card:hover h3 {
-  background: linear-gradient(90deg, var(--primary-light), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: translateX(5px);
-}
+      .project-card:hover h3 {
+        background: linear-gradient(
+          90deg,
+          var(--primary-light),
+          var(--secondary)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: translateX(5px);
+      }
 
-.project-card p {
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
+      .project-card p {
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
 
-.project-card:hover p {
-  color: rgba(255, 255, 255, 0.9);
-}
+      .project-card:hover p {
+        color: rgba(255, 255, 255, 0.9);
+      }
 
-/* ===== Buttons ===== */
-.btn-primary {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  color: white;
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  box-shadow: 0 4px 15px rgba(147, 51, 234, 0.4);
-}
+      /* ===== Buttons ===== */
+      .btn-primary {
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        color: white;
+        font-weight: 500;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        box-shadow: 0 4px 15px rgba(147, 51, 234, 0.4);
+      }
 
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px -5px rgba(147, 51, 234, 0.6);
-}
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px -5px rgba(147, 51, 234, 0.6);
+      }
 
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: all 0.6s ease;
-}
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: all 0.6s ease;
+      }
 
-.btn-primary:hover::before {
-  left: 100%;
-}
+      .btn-primary:hover::before {
+        left: 100%;
+      }
 
-/* ===== Animations ===== */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      /* ===== Animations ===== */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
 
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
 
-/* ===== Preloader ===== */
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--darker);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
+      /* ===== Preloader ===== */
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--darker);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
 
-.preloader-logo {
-  font-size: 2.5rem;
-  font-weight: bold;
-  background: linear-gradient(to right, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 1rem;
-  animation: pulse 2s infinite;
-}
+      .preloader-logo {
+        font-size: 2.5rem;
+        font-weight: bold;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        animation: pulse 2s infinite;
+      }
 
-.preloader-spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(147, 51, 234, 0.2);
-  border-radius: 50%;
-  border-top-color: var(--primary);
-  animation: spin 1s ease-in-out infinite;
-}
+      .preloader-spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(147, 51, 234, 0.2);
+        border-radius: 50%;
+        border-top-color: var(--primary);
+        animation: spin 1s ease-in-out infinite;
+      }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
 
-/* ===== Custom Cursor ===== */
-.cursor-glow {
-  width: 40px;
-  height: 40px;
-  background: radial-gradient(circle, rgba(147, 51, 234, 0.5) 0%, rgba(147, 51, 234, 0) 70%);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s;
-  mix-blend-mode: screen;
-}
+      /* ===== Custom Cursor ===== */
+      .cursor-glow {
+        width: 40px;
+        height: 40px;
+        background: radial-gradient(
+          circle,
+          rgba(147, 51, 234, 0.5) 0%,
+          rgba(147, 51, 234, 0) 70%
+        );
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: width 0.2s, height 0.2s;
+        mix-blend-mode: screen;
+      }
 
-/* ===== View All Projects Button Animation ===== */
-.view-all-btn {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s ease;
-}
+      /* ===== View All Projects Button Animation ===== */
+      .view-all-btn {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s ease;
+      }
 
-.view-all-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px -10px rgba(147, 51, 234, 0.5);
-}
+      .view-all-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px -10px rgba(147, 51, 234, 0.5);
+      }
 
-.view-all-btn:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: linear-gradient(45deg, var(--primary), var(--secondary), var(--primary));
-  background-size: 200% 200%;
-  z-index: -1;
-  animation: gradientMove 3s ease infinite;
-}
+      .view-all-btn:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(
+          45deg,
+          var(--primary),
+          var(--secondary),
+          var(--primary)
+        );
+        background-size: 200% 200%;
+        z-index: -1;
+        animation: gradientMove 3s ease infinite;
+      }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
 
-/* ===== Background Effects ===== */
-.portfolio-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.05;
-  background-image: 
-    radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.4) 0%, transparent 30%),
-    radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.4) 0%, transparent 30%);
-}
+      /* ===== Background Effects ===== */
+      .portfolio-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.05;
+        background-image: radial-gradient(
+            circle at 20% 30%,
+            rgba(147, 51, 234, 0.4) 0%,
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(59, 130, 246, 0.4) 0%,
+            transparent 30%
+          );
+      }
 
-/* Media queries for responsive design */
-@media (max-width: 768px) {
-  .project-card:hover {
-    transform: translateY(-10px);
-  }
-}
-   </style>
-</head>
-<body class="bg-black text-white">
-  <!-- Preloader -->
-  <div class="preloader">
-    <div class="preloader-content">
-      <div class="preloader-logo">Veritexis</div>
-      <div class="preloader-spinner mx-auto"></div>
-    </div>
-  </div>
-
-  <!-- Custom Cursor -->
-  <div class="cursor-glow"></div>
-
-  <!-- Navbar -->
-  <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="/" class="text-2xl font-bold flex items-center">
-        <span class="text-3xl bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Veritexis</span>
-      </a>
-      <div class="hidden md:block">
-        <ul class="flex space-x-8">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="about_us.html" class="nav-link">About Us</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
-          <li><a href="team.html" class="nav-link">Team</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
-          <li><a href="contact_us.html" class="nav-link">Contact</a></li>
-        </ul>
+      /* Media queries for responsive design */
+      @media (max-width: 768px) {
+        .project-card:hover {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader-content">
+        <div class="preloader-logo">Veritexis</div>
+        <div class="preloader-spinner mx-auto"></div>
       </div>
-      <button class="md:hidden focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
     </div>
-  </nav>
 
-  <!-- Mobile Menu -->
-  <div class="fixed inset-0 bg-black bg-opacity-90 z-40 hidden">
-    <div class="flex flex-col h-full justify-center items-center text-2xl space-y-8">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about_us.html" class="nav-link">About Us</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="portfolio.html" class="nav-link">Portfolio</a>
-      <a href="team.html" class="nav-link">Team</a>
-      <a href="blog.html" class="nav-link">Blog</a>
-      <a href="contact_us.html" class="nav-link">Contact</a>
-      <button class="mt-8 focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-  </div>
+    <!-- Custom Cursor -->
+    <div class="cursor-glow"></div>
 
-  <!-- Hero Section -->
-  <header class="relative py-32 bg-gray-900">
-    <div class="absolute inset-0 z-0">
-      <div class="absolute inset-0 bg-black bg-opacity-80"></div>
-    </div>
-    <div class="relative z-10 container mx-auto px-4 text-center">
-      <h1 class="text-5xl md:text-7xl font-bold mb-6" data-aos="fade-up">
-        Our <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Portfolio</span>
-      </h1>
-      <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-        Explore our latest projects and see how we've helped businesses transform their digital presence.
-      </p>
-    </div>
-  </header>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="/" class="text-2xl font-bold flex items-center">
+          <span
+            class="text-3xl bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500"
+            >Veritexis</span
+          >
+        </a>
+        <div class="hidden md:block">
+          <ul class="flex space-x-8">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about_us.html" class="nav-link">About Us</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li>
+              <a href="portfolio.html" class="nav-link active">Portfolio</a>
+            </li>
+            <li><a href="team.html" class="nav-link">Team</a></li>
+            <li><a href="contact_us.html" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+        <button class="md:hidden focus:outline-none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
 
-  <!-- Portfolio Filter Updated Section -->
-<section class="py-12 relative">
-    <div class="portfolio-bg"></div>
-    <div class="container mx-auto px-4">
-      <div class="flex flex-wrap justify-center space-x-2 space-y-2 md:space-y-0 mb-12 portfolio-filter" data-aos="fade-up">
-        <button class="filter-btn px-6 py-2 rounded-full bg-purple-800 text-white transition-all">All Projects</button>
-        <button class="filter-btn px-6 py-2 rounded-full bg-gray-800 hover:bg-purple-800 text-white transition-all">Mobile Apps</button>
-        <button class="filter-btn px-6 py-2 rounded-full bg-gray-800 hover:bg-purple-800 text-white transition-all">Web Development</button>
-        <button class="filter-btn px-6 py-2 rounded-full bg-gray-800 hover:bg-purple-800 text-white transition-all">Machine Learning</button>
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 bg-black bg-opacity-90 z-40 hidden">
+      <div
+        class="flex flex-col h-full justify-center items-center text-2xl space-y-8"
+      >
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about_us.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="team.html" class="nav-link">Team</a>
+        <a href="contact_us.html" class="nav-link">Contact</a>
+        <button class="mt-8 focus:outline-none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
       </div>
     </div>
-  </section>
-  
-  <!-- Portfolio Projects Grid Updated Section -->
-  <section class="py-12 bg-gray-900 relative">
-    <div class="portfolio-bg"></div>
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        
-        <!-- Project Card 1 -->
-        <div class="project-card overflow-hidden" data-aos="fade-up">
-          <div class="relative overflow-hidden">
-            <img src="assets/images/project1.jpg" alt="Project 1" class="w-full h-64 object-cover">
-            <div class="project-overlay">
-              <a href="#" class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all">
-                <i class="fas fa-external-link-alt text-white"></i>
+
+    <!-- Hero Section -->
+    <header class="relative py-32 bg-gray-900">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-black bg-opacity-80"></div>
+      </div>
+      <div class="relative z-10 container mx-auto px-4 text-center">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6" data-aos="fade-up">
+          Our
+          <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500"
+            >Portfolio</span
+          >
+        </h1>
+        <p
+          class="text-lg md:text-xl mb-8 max-w-3xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Explore our latest projects and see how we've helped businesses
+          transform their digital presence.
+        </p>
+      </div>
+    </header>
+
+    <!-- Portfolio Filter Updated Section -->
+    <section class="py-12 relative">
+      <div class="portfolio-bg"></div>
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-wrap justify-center space-x-2 space-y-2 md:space-y-0 mb-12 portfolio-filter"
+          data-aos="fade-up"
+        >
+          <button
+            class="filter-btn px-6 py-2 rounded-full bg-purple-800 text-white transition-all"
+          >
+            All Projects
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full bg-gray-800 hover:bg-purple-800 text-white transition-all"
+          >
+            Mobile Apps
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full bg-gray-800 hover:bg-purple-800 text-white transition-all"
+          >
+            Web Development
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full bg-gray-800 hover:bg-purple-800 text-white transition-all"
+          >
+            Machine Learning
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Projects Grid Updated Section -->
+    <section class="py-12 bg-gray-900 relative">
+      <div class="portfolio-bg"></div>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <!-- Project Card 1 -->
+          <div class="project-card overflow-hidden" data-aos="fade-up">
+            <div class="relative overflow-hidden">
+              <img
+                src="assets/images/project1.jpg"
+                alt="Project 1"
+                class="w-full h-64 object-cover"
+              />
+              <div class="project-overlay">
+                <a
+                  href="#"
+                  class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all"
+                >
+                  <i class="fas fa-external-link-alt text-white"></i>
+                </a>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">FitTrack App</h3>
+                <span
+                  class="category-badge px-3 py-1 bg-purple-900 text-xs rounded-full"
+                  >Mobile</span
+                >
+              </div>
+              <p class="text-gray-300">
+                A fitness app with real-time tracking for enthusiasts.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div
+            class="project-card overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="assets/images/project2.jpg"
+                alt="Project 2"
+                class="w-full h-64 object-cover"
+              />
+              <div class="project-overlay">
+                <a
+                  href="#"
+                  class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all"
+                >
+                  <i class="fas fa-external-link-alt text-white"></i>
+                </a>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">E-Shop Dashboard</h3>
+                <span
+                  class="category-badge px-3 py-1 bg-purple-900 text-xs rounded-full"
+                  >Web</span
+                >
+              </div>
+              <p class="text-gray-300">
+                A comprehensive platform for managing e-commerce operations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Repeat similar structure for other project cards -->
+        </div>
+
+        <div class="text-center mt-16" data-aos="fade-up">
+          <a
+            href="#"
+            class="btn-primary view-all-btn px-8 py-3 rounded-lg inline-block"
+            >View All Projects</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+          <!-- Branding & Social -->
+          <div>
+            <a href="/" class="text-2xl font-bold mb-6 block">
+              <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500"
+                >Veritexis</span
+              >
+            </a>
+            <p class="text-gray-400 mb-6">
+              Innovative solutions for your business, delivered with expertise
+              and passion.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-purple-500 transition-colors"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-purple-500 transition-colors"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-purple-500 transition-colors"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-purple-500 transition-colors"
+              >
+                <i class="fab fa-linkedin-in"></i>
               </a>
             </div>
           </div>
-          <div class="p-6">
-            <div class="flex justify-between items-center mb-4">
-              <h3 class="text-xl font-bold">FitTrack App</h3>
-              <span class="category-badge px-3 py-1 bg-purple-900 text-xs rounded-full">Mobile</span>
-            </div>
-            <p class="text-gray-300">A fitness app with real-time tracking for enthusiasts.</p>
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about_us.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="portfolio.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="team.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blog.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact_us.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Resources -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Resources</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Support</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Newsletter -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Subscribe to our newsletter for the latest updates.
+            </p>
+            <form action="#">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="w-full p-3 rounded bg-gray-800 text-white mb-4"
+              />
+              <button type="submit" class="btn-primary w-full">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
-        
-        <!-- Project Card 2 -->
-        <div class="project-card overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-          <div class="relative overflow-hidden">
-            <img src="assets/images/project2.jpg" alt="Project 2" class="w-full h-64 object-cover">
-            <div class="project-overlay">
-              <a href="#" class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all">
-                <i class="fas fa-external-link-alt text-white"></i>
-              </a>
-            </div>
-          </div>
-          <div class="p-6">
-            <div class="flex justify-between items-center mb-4">
-              <h3 class="text-xl font-bold">E-Shop Dashboard</h3>
-              <span class="category-badge px-3 py-1 bg-purple-900 text-xs rounded-full">Web</span>
-            </div>
-            <p class="text-gray-300">A comprehensive platform for managing e-commerce operations.</p>
-          </div>
-        </div>
-        
-        <!-- Repeat similar structure for other project cards -->
-        
-      </div>
-      
-      <div class="text-center mt-16" data-aos="fade-up">
-        <a href="#" class="btn-primary view-all-btn px-8 py-3 rounded-lg inline-block">View All Projects</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 pt-16 pb-8">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
-        <!-- Branding & Social -->
-        <div>
-          <a href="/" class="text-2xl font-bold mb-6 block">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Veritexis</span>
-          </a>
-          <p class="text-gray-400 mb-6">
-            Innovative solutions for your business, delivered with expertise and passion.
+        <div class="text-center">
+          <p class="text-gray-500">
+            &copy; 2023 Veritexis. All rights reserved.
           </p>
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
-        <!-- Quick Links -->
-        <div>
-          <h3 class="text-xl font-bold mb-6">Quick Links</h3>
-          <ul class="space-y-3">
-            <li><a href="index.html" class="text-gray-400 hover:text-purple-500 transition-colors">Home</a></li>
-            <li><a href="about_us.html" class="text-gray-400 hover:text-purple-500 transition-colors">About Us</a></li>
-            <li><a href="services.html" class="text-gray-400 hover:text-purple-500 transition-colors">Services</a></li>
-            <li><a href="portfolio.html" class="text-gray-400 hover:text-purple-500 transition-colors">Portfolio</a></li>
-            <li><a href="team.html" class="text-gray-400 hover:text-purple-500 transition-colors">Team</a></li>
-            <li><a href="blog.html" class="text-gray-400 hover:text-purple-500 transition-colors">Blog</a></li>
-            <li><a href="contact_us.html" class="text-gray-400 hover:text-purple-500 transition-colors">Contact</a></li>
-          </ul>
-        </div>
-        <!-- Resources -->
-        <div>
-          <h3 class="text-xl font-bold mb-6">Resources</h3>
-          <ul class="space-y-3">
-            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">FAQ</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">Support</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">Privacy Policy</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">Terms of Service</a></li>
-          </ul>
-        </div>
-        <!-- Newsletter -->
-        <div>
-          <h3 class="text-xl font-bold mb-6">Newsletter</h3>
-          <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
-          <form action="#">
-            <input type="email" placeholder="Your email" class="w-full p-3 rounded bg-gray-800 text-white mb-4" />
-            <button type="submit" class="btn-primary w-full">Subscribe</button>
-          </form>
         </div>
       </div>
-      <div class="text-center">
-        <p class="text-gray-500">&copy; 2023 Veritexis. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Enhanced JavaScript for Portfolio Page
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Enhanced JavaScript for Portfolio Page
 
-// Initialize AOS with custom settings
-document.addEventListener('DOMContentLoaded', function() {
-  AOS.init({
-    once: true,
-  });
-  
-  // Preloader
-  window.addEventListener('load', () => {
-    const preloader = document.querySelector('.preloader');
-    preloader.style.opacity = '0';
-    setTimeout(() => {
-      preloader.style.display = 'none';
-    }, 500);
-  });
-  
-  // Sticky Navbar
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      navbar.classList.add('sticky-nav');
-    } else {
-      navbar.classList.remove('sticky-nav');
-    }
-  });
-  
-  // Mobile Menu Toggle
-  const menuBtn = document.querySelector('.md\\:hidden');
-  const mobileMenu = document.querySelector('.fixed.inset-0.bg-black');
-  const closeBtn = document.querySelector('.mt-8.focus\\:outline-none');
-  
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    document.body.style.overflow = 'hidden';
-  });
-  
-  closeBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-    document.body.style.overflow = '';
-  });
-  
-  // Custom cursor effect
-  const cursorGlow = document.querySelector('.cursor-glow');
-  
-  document.addEventListener('mousemove', (e) => {
-    cursorGlow.style.top = `${e.clientY}px`;
-    cursorGlow.style.left = `${e.clientX}px`;
-  });
-  
-  // Project filtering functionality
-  const filterButtons = document.querySelectorAll('.portfolio-filter button');
-  const projectCards = document.querySelectorAll('.project-card');
-  
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Remove active class from all buttons
-      filterButtons.forEach(btn => {
-        btn.classList.remove('bg-purple-800');
-        btn.classList.add('bg-gray-800');
-      });
-      
-      // Add active class to clicked button
-      button.classList.remove('bg-gray-800');
-      button.classList.add('bg-purple-800');
-      
-      const category = button.textContent.trim();
-      
-      // Filter projects
-      if (category === 'All Projects') {
-        projectCards.forEach(card => {
-          card.style.display = 'block';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = '';
-          }, 100);
+      // Initialize AOS with custom settings
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          once: true,
         });
-      } else {
-        projectCards.forEach(card => {
-          const cardCategory = card.querySelector('.px-3.py-1').textContent.trim();
-          
-          if (cardCategory === category.replace('s', '') || 
-              (cardCategory === 'ML/AI' && category === 'Machine Learning')) {
-            card.style.display = 'block';
-            setTimeout(() => {
-              card.style.opacity = '1';
-              card.style.transform = '';
-            }, 100);
+
+        // Preloader
+        window.addEventListener("load", () => {
+          const preloader = document.querySelector(".preloader");
+          preloader.style.opacity = "0";
+          setTimeout(() => {
+            preloader.style.display = "none";
+          }, 500);
+        });
+
+        // Sticky Navbar
+        const navbar = document.getElementById("navbar");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 100) {
+            navbar.classList.add("sticky-nav");
           } else {
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.8)';
-            setTimeout(() => {
-              card.style.display = 'none';
-            }, 300);
+            navbar.classList.remove("sticky-nav");
           }
         });
-      }
-    });
-  });
-  
-  // Add hover effect to project cards
-  projectCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      
-      const angleX = (y - centerY) / 20;
-      const angleY = (centerX - x) / 20;
-      
-      card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateZ(10px)`;
-    });
-    
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
-  
-  // Add parallax scrolling effect
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset;
-    document.querySelectorAll('.parallax').forEach(element => {
-      const speed = element.dataset.speed || 0.5;
-      element.style.transform = `translateY(${scrollTop * speed}px)`;
-    });
-  });
-});
-  </script>
-</body>
+
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector(".md\\:hidden");
+        const mobileMenu = document.querySelector(".fixed.inset-0.bg-black");
+        const closeBtn = document.querySelector(".mt-8.focus\\:outline-none");
+
+        menuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          document.body.style.overflow = "hidden";
+        });
+
+        closeBtn.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          document.body.style.overflow = "";
+        });
+
+        // Custom cursor effect
+        const cursorGlow = document.querySelector(".cursor-glow");
+
+        document.addEventListener("mousemove", (e) => {
+          cursorGlow.style.top = `${e.clientY}px`;
+          cursorGlow.style.left = `${e.clientX}px`;
+        });
+
+        // Project filtering functionality
+        const filterButtons = document.querySelectorAll(
+          ".portfolio-filter button"
+        );
+        const projectCards = document.querySelectorAll(".project-card");
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            // Remove active class from all buttons
+            filterButtons.forEach((btn) => {
+              btn.classList.remove("bg-purple-800");
+              btn.classList.add("bg-gray-800");
+            });
+
+            // Add active class to clicked button
+            button.classList.remove("bg-gray-800");
+            button.classList.add("bg-purple-800");
+
+            const category = button.textContent.trim();
+
+            // Filter projects
+            if (category === "All Projects") {
+              projectCards.forEach((card) => {
+                card.style.display = "block";
+                setTimeout(() => {
+                  card.style.opacity = "1";
+                  card.style.transform = "";
+                }, 100);
+              });
+            } else {
+              projectCards.forEach((card) => {
+                const cardCategory = card
+                  .querySelector(".px-3.py-1")
+                  .textContent.trim();
+
+                if (
+                  cardCategory === category.replace("s", "") ||
+                  (cardCategory === "ML/AI" && category === "Machine Learning")
+                ) {
+                  card.style.display = "block";
+                  setTimeout(() => {
+                    card.style.opacity = "1";
+                    card.style.transform = "";
+                  }, 100);
+                } else {
+                  card.style.opacity = "0";
+                  card.style.transform = "scale(0.8)";
+                  setTimeout(() => {
+                    card.style.display = "none";
+                  }, 300);
+                }
+              });
+            }
+          });
+        });
+
+        // Add hover effect to project cards
+        projectCards.forEach((card) => {
+          card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const angleX = (y - centerY) / 20;
+            const angleY = (centerX - x) / 20;
+
+            card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateZ(10px)`;
+          });
+
+          card.addEventListener("mouseleave", () => {
+            card.style.transform = "";
+          });
+        });
+
+        // Add parallax scrolling effect
+        window.addEventListener("scroll", () => {
+          const scrollTop = window.pageYOffset;
+          document.querySelectorAll(".parallax").forEach((element) => {
+            const speed = element.dataset.speed || 0.5;
+            element.style.transform = `translateY(${scrollTop * speed}px)`;
+          });
+        });
+      });
+    </script>
+  </body>
 </html>

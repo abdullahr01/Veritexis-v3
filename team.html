@@ -1,402 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veritexis - Team</title>
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="bg-black text-white">
-  <!-- Preloader -->
-  <div class="preloader">
-    <div class="preloader-content">
-      <div class="preloader-logo">Veritexis</div>
-      <div class="preloader-spinner mx-auto"></div>
-    </div>
-  </div>
-
-  <!-- Custom Cursor -->
-  <div class="cursor-glow"></div>
-
-  <!-- Navbar -->
-  <nav class="fixed w-full z-50 transition-all duration-500" id="navbar">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="/" class="text-2xl font-bold flex items-center">
-        <span class="text-3xl bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Veritexis</span>
-      </a>
-      <div class="hidden md:block">
-        <ul class="flex space-x-8">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="about_us.html" class="nav-link">About Us</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-          <li><a href="team.html" class="nav-link active">Team</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
-          <li><a href="contact_us.html" class="nav-link">Contact</a></li>
-        </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veritexis - Team</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-black text-white">
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader-content">
+        <div class="preloader-logo">Veritexis</div>
+        <div class="preloader-spinner mx-auto"></div>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden focus:outline-none z-50">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-glow"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-500" id="navbar">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="/" class="text-2xl font-bold flex items-center">
+          <span
+            class="text-3xl bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500"
+            >Veritexis</span
+          >
+        </a>
+        <div class="hidden md:block">
+          <ul class="flex space-x-8">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about_us.html" class="nav-link">About Us</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li><a href="team.html" class="nav-link active">Team</a></li>
+            <li><a href="contact_us.html" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden focus:outline-none z-50">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden flex flex-col justify-center items-center text-2xl space-y-8"
+    >
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about_us.html" class="nav-link">About Us</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="team.html" class="nav-link">Team</a>
+      <a href="contact_us.html" class="nav-link">Contact</a>
+      <button id="close-menu-btn" class="mt-8 focus:outline-none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 text-white"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
         </svg>
       </button>
     </div>
-  </nav>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden flex flex-col justify-center items-center text-2xl space-y-8">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about_us.html" class="nav-link">About Us</a>
-    <a href="services.html" class="nav-link">Services</a>
-    <a href="portfolio.html" class="nav-link">Portfolio</a>
-    <a href="team.html" class="nav-link">Team</a>
-    <a href="blog.html" class="nav-link">Blog</a>
-    <a href="contact_us.html" class="nav-link">Contact</a>
-    <button id="close-menu-btn" class="mt-8 focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
-  </div>
-
-  <!-- Hero Section -->
-  <header class="relative py-32 min-h-screen flex items-center bg-gray-900 overflow-hidden">
-    <!-- Animated particles background -->
-    <div class="absolute inset-0 z-0">
-      <div class="absolute inset-0 bg-black bg-opacity-80"></div>
-      <!-- Particles -->
-      <div class="particle" style="width: 2px; height: 2px; top: 20%; left: 10%;"></div>
-      <div class="particle" style="width: 3px; height: 3px; top: 60%; left: 25%; animation-delay: 2s;"></div>
-      <div class="particle" style="width: 2px; height: 2px; top: 40%; left: 70%; animation-delay: 4s;"></div>
-      <div class="particle" style="width: 4px; height: 4px; top: 80%; left: 85%; animation-delay: 6s;"></div>
-      <div class="particle" style="width: 3px; height: 3px; top: 10%; left: 50%; animation-delay: 8s;"></div>
-      <div class="particle" style="width: 2px; height: 2px; top: 30%; left: 30%; animation-delay: 10s;"></div>
-      <div class="particle" style="width: 3px; height: 3px; top: 70%; left: 60%; animation-delay: 12s;"></div>
-      <div class="particle" style="width: 2px; height: 2px; top: 50%; left: 40%; animation-delay: 14s;"></div>
-    </div>
-    <div class="relative container mx-auto px-4 text-center z-10">
-      <h1 class="text-5xl md:text-7xl font-bold mb-6" data-aos="fade-up" data-aos-duration="1000">
-        Meet Our <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Team</span>
-      </h1>
-      <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-        A group of innovative minds and creative problem-solvers driving our success.
-      </p>
-      <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-        <a href="#founders" class="btn-primary py-3 px-8 rounded-full inline-block text-lg hover:shadow-lg">
-          Meet the Team
-        </a>
+    <!-- Hero Section -->
+    <header
+      class="relative py-32 min-h-screen flex items-center bg-gray-900 overflow-hidden"
+    >
+      <!-- Animated particles background -->
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-black bg-opacity-80"></div>
+        <!-- Particles -->
+        <div
+          class="particle"
+          style="width: 2px; height: 2px; top: 20%; left: 10%"
+        ></div>
+        <div
+          class="particle"
+          style="
+            width: 3px;
+            height: 3px;
+            top: 60%;
+            left: 25%;
+            animation-delay: 2s;
+          "
+        ></div>
+        <div
+          class="particle"
+          style="
+            width: 2px;
+            height: 2px;
+            top: 40%;
+            left: 70%;
+            animation-delay: 4s;
+          "
+        ></div>
+        <div
+          class="particle"
+          style="
+            width: 4px;
+            height: 4px;
+            top: 80%;
+            left: 85%;
+            animation-delay: 6s;
+          "
+        ></div>
+        <div
+          class="particle"
+          style="
+            width: 3px;
+            height: 3px;
+            top: 10%;
+            left: 50%;
+            animation-delay: 8s;
+          "
+        ></div>
+        <div
+          class="particle"
+          style="
+            width: 2px;
+            height: 2px;
+            top: 30%;
+            left: 30%;
+            animation-delay: 10s;
+          "
+        ></div>
+        <div
+          class="particle"
+          style="
+            width: 3px;
+            height: 3px;
+            top: 70%;
+            left: 60%;
+            animation-delay: 12s;
+          "
+        ></div>
+        <div
+          class="particle"
+          style="
+            width: 2px;
+            height: 2px;
+            top: 50%;
+            left: 40%;
+            animation-delay: 14s;
+          "
+        ></div>
       </div>
-    </div>
-  </header>
-
-  <!-- Founders Section -->
-  <section id="founders" class="py-24 section-container">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="team-section-title">Visionary Founders</h2>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto mt-6">The brilliant minds behind Veritexis who transformed an idea into a revolutionary company.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
-        <!-- Founder Card 1 -->
-        <div class="founder-card" data-aos="fade-up" data-aos-duration="1000">
-          <div class="founder-img-container">
-            <img src="assets/images/founder1.jpg" alt="Founder 1" class="founder-img">
-          </div>
-          <p class="founder-quote">"Innovation distinguishes between a leader and a follower."</p>
-          <h3 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600">Alice Johnson</h3>
-          <p class="text-lg text-gray-300 mt-2">CEO &amp; Co-Founder</p>
-          <p class="text-gray-400 mt-4">Alice leads our company with a vision to transform digital experiences through cutting-edge innovation and design excellence.</p>
-          
-          <div class="social-icons">
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Founder Card 2 -->
-        <div class="founder-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-          <div class="founder-img-container">
-            <img src="assets/images/founder2.jpg" alt="Founder 2" class="founder-img">
-          </div>
-          <p class="founder-quote">"The best way to predict the future is to create it."</p>
-          <h3 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">Michael Smith</h3>
-          <p class="text-lg text-gray-300 mt-2">CTO &amp; Co-Founder</p>
-          <p class="text-gray-400 mt-4">Michael's technical brilliance drives our product development, ensuring we stay at the forefront of technology innovation.</p>
-          
-          <div class="social-icons">
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team Members Section -->
-  <section class="py-24 bg-gray-900 section-container">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="team-section-title">Talented Team Members</h2>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto mt-6">Meet the exceptional professionals who bring our vision to life through their expertise and dedication.</p>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8">
-        <!-- Team Member Card 1 -->
-        <div class="team-member-card" data-aos="fade-up" data-aos-duration="1000">
-          <div class="team-member-img-container">
-            <img src="assets/images/team1.jpg" alt="Team Member 1" class="team-member-img">
-          </div>
-          <div class="member-info">
-            <h3 class="text-xl font-bold">Sophia Lee</h3>
-            <p class="text-purple-400 mt-1">UI/UX Designer</p>
-            <div class="member-detail">
-              <p>Sophia creates beautiful, intuitive user experiences that delight our clients and their customers.</p>
-            </div>
-          </div>
-          <div class="social-icons">
-            <a href="#" class="social-icon">
-              <i class="fab fa-dribbble"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Team Member Card 2 -->
-        <div class="team-member-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-          <div class="team-member-img-container">
-            <img src="assets/images/team2.jpg" alt="Team Member 2" class="team-member-img">
-          </div>
-          <div class="member-info">
-            <h3 class="text-xl font-bold">James Brown</h3>
-            <p class="text-purple-400 mt-1">Front-End Developer</p>
-            <div class="member-detail">
-              <p>James brings designs to life with clean, efficient code and cutting-edge front-end technologies.</p>
-            </div>
-          </div>
-          <div class="social-icons">
-            <a href="#" class="social-icon">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-codepen"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Team Member Card 3 -->
-        <div class="team-member-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-          <div class="team-member-img-container">
-            <img src="assets/images/team3.jpg" alt="Team Member 3" class="team-member-img">
-          </div>
-          <div class="member-info">
-            <h3 class="text-xl font-bold">Emma Davis</h3>
-            <p class="text-purple-400 mt-1">Back-End Developer</p>
-            <div class="member-detail">
-              <p>Emma builds powerful, scalable back-end systems that power our most complex applications.</p>
-            </div>
-          </div>
-          <div class="social-icons">
-            <a href="#" class="social-icon">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-stack-overflow"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Team Member Card 4 -->
-        <div class="team-member-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-          <div class="team-member-img-container">
-            <img src="assets/images/team4.jpg" alt="Team Member 4" class="team-member-img">
-          </div>
-          <div class="member-info">
-            <h3 class="text-xl font-bold">Liam Wilson</h3>
-            <p class="text-purple-400 mt-1">QA Engineer</p>
-            <div class="member-detail">
-              <p>Liam ensures our products meet the highest quality standards through rigorous testing protocols.</p>
-            </div>
-          </div>
-          <div class="social-icons">
-            <a href="#" class="social-icon">
-              <i class="fab fa-gitlab"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Team Member Card 5 -->
-        <div class="team-member-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-          <div class="team-member-img-container">
-            <img src="assets/images/team5.jpg" alt="Team Member 5" class="team-member-img">
-          </div>
-          <div class="member-info">
-            <h3 class="text-xl font-bold">Olivia Martinez</h3>
-            <p class="text-purple-400 mt-1">Marketing Specialist</p>
-            <div class="member-detail">
-              <p>Olivia creates compelling marketing strategies that help our clients grow their digital presence.</p>
-            </div>
-          </div>
-          <div class="social-icons">
-            <a href="#" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Join Our Team Card -->
-        <div class="team-member-card flex flex-col justify-center items-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-          <div class="text-center">
-            <div class="mb-6">
-              <i class="fas fa-plus-circle text-5xl text-purple-500"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">Join Our Team</h3>
-            <p class="text-gray-400 mb-6">We're always looking for talented individuals to join our team. Explore opportunities and apply now!</p>
-            <a href="careers.html" class="btn-primary py-2 px-4 rounded-full">Apply Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 pt-16 pb-8">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
-        <!-- Branding & Social -->
-        <div>
-          <a href="/" class="text-2xl font-bold mb-6 block">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">Veritexis</span>
+      <div class="relative container mx-auto px-4 text-center z-10">
+        <h1
+          class="text-5xl md:text-7xl font-bold mb-6"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          Meet Our
+          <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500"
+            >Team</span
+          >
+        </h1>
+        <p
+          class="text-lg md:text-xl mb-12 max-w-3xl mx-auto"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
+          A group of innovative minds and creative problem-solvers driving our
+          success.
+        </p>
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+          <a
+            href="#founders"
+            class="btn-primary py-3 px-8 rounded-full inline-block text-lg hover:shadow-lg"
+          >
+            Meet the Team
           </a>
-          <p class="text-gray-400 mb-6">
-            Innovative solutions for your business, delivered with expertise and passion.
+        </div>
+      </div>
+    </header>
+
+    <!-- Founders Section -->
+    <section id="founders" class="py-24 section-container">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="team-section-title">Visionary Founders</h2>
+          <p class="text-lg text-gray-300 max-w-2xl mx-auto mt-6">
+            The brilliant minds behind Veritexis who transformed an idea into a
+            revolutionary company.
           </p>
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
+          <!-- Founder Card 1 -->
+          <div class="founder-card" data-aos="fade-up" data-aos-duration="1000">
+            <div class="founder-img-container">
+              <img
+                src="assets/images/founder1.jpg"
+                alt="Founder 1"
+                class="founder-img"
+              />
+            </div>
+            <p class="founder-quote">
+              "Innovation distinguishes between a leader and a follower."
+            </p>
+            <h3
+              class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600"
+            >
+              Alice Johnson
+            </h3>
+            <p class="text-lg text-gray-300 mt-2">CEO &amp; Co-Founder</p>
+            <p class="text-gray-400 mt-4">
+              Alice leads our company with a vision to transform digital
+              experiences through cutting-edge innovation and design excellence.
+            </p>
+
+            <div class="social-icons">
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Founder Card 2 -->
+          <div
+            class="founder-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <div class="founder-img-container">
+              <img
+                src="assets/images/founder2.jpg"
+                alt="Founder 2"
+                class="founder-img"
+              />
+            </div>
+            <p class="founder-quote">
+              "The best way to predict the future is to create it."
+            </p>
+            <h3
+              class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600"
+            >
+              Michael Smith
+            </h3>
+            <p class="text-lg text-gray-300 mt-2">CTO &amp; Co-Founder</p>
+            <p class="text-gray-400 mt-4">
+              Michael's technical brilliance drives our product development,
+              ensuring we stay at the forefront of technology innovation.
+            </p>
+
+            <div class="social-icons">
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
           </div>
         </div>
-        <!-- Quick Links -->
-        <div>
-          <h3 class="text-xl font-bold mb-6">Quick Links</h3>
-          <ul class="space-y-3">
-            <li><a href="index.html" class="text-gray-400 hover:text-purple-500 transition-colors">Home</a></li>
-            <li><a href="about_us.html" class="text-gray-400 hover:text-purple-500 transition-colors">About Us</a></li>
-            <li><a href="/services.html" class="text-gray-400 hover:text-purple-500 transition-colors">Services</a></li>
-            <li><a href="/portfolio.html" class="text-gray-400 hover:text-purple-500 transition-colors">Portfolio</a></li>
-            <li><a href="/team.html" class="text-gray-400 hover:text-purple-500 transition-colors">Team</a></li>
-            <li><a href="blog.html" class="text-gray-400 hover:text-purple-500 transition-colors">Blog</a></li>
-            <li><a href="contact_us.html" class="text-gray-400 hover:text-purple-500 transition-colors">Contact</a></li>
-          </ul>
-        </div>
-        <!-- Resources -->
-        <div>
-          <h3 class="text-xl font-bold mb-6">Resources</h3>
-          <ul class="space-y-3">
-            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">FAQ</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">Support</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">Privacy Policy</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-purple-500 transition-colors">Terms of Service</a></li>
-          </ul>
-        </div>
-        <!-- Newsletter -->
-        <div>
-          <h3 class="text-xl font-bold mb-6">Newsletter</h3>
-          <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
-          <form action="#">
-            <input type="email" placeholder="Your email" class="w-full p-3 rounded bg-gray-800 text-white mb-4" />
-            <button type="submit" class="btn-primary w-full">Subscribe</button>
-          </form>
-        </div>
       </div>
-      <div class="text-center">
-        <p class="text-gray-500">&copy; 2023 Veritexis. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Hide preloader after window loads
-      window.addEventListener("load", function() {
-        document.querySelector('.preloader').style.display = 'none';
+    <!-- Team Members Section -->
+    <section class="py-24 bg-gray-900 section-container">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="team-section-title">Talented Team Members</h2>
+          <p class="text-lg text-gray-300 max-w-2xl mx-auto mt-6">
+            Meet the exceptional professionals who bring our vision to life
+            through their expertise and dedication.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8">
+          <!-- Team Member Card 1 -->
+          <div
+            class="team-member-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <div class="team-member-img-container">
+              <img
+                src="assets/images/team1.jpg"
+                alt="Team Member 1"
+                class="team-member-img"
+              />
+            </div>
+            <div class="member-info">
+              <h3 class="text-xl font-bold">Sophia Lee</h3>
+              <p class="text-purple-400 mt-1">UI/UX Designer</p>
+              <div class="member-detail">
+                <p>
+                  Sophia creates beautiful, intuitive user experiences that
+                  delight our clients and their customers.
+                </p>
+              </div>
+            </div>
+            <div class="social-icons">
+              <a href="#" class="social-icon">
+                <i class="fab fa-dribbble"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Team Member Card 2 -->
+          <div
+            class="team-member-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
+            <div class="team-member-img-container">
+              <img
+                src="assets/images/team2.jpg"
+                alt="Team Member 2"
+                class="team-member-img"
+              />
+            </div>
+            <div class="member-info">
+              <h3 class="text-xl font-bold">James Brown</h3>
+              <p class="text-purple-400 mt-1">Front-End Developer</p>
+              <div class="member-detail">
+                <p>
+                  James brings designs to life with clean, efficient code and
+                  cutting-edge front-end technologies.
+                </p>
+              </div>
+            </div>
+            <div class="social-icons">
+              <a href="#" class="social-icon">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-codepen"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Team Member Card 3 -->
+          <div
+            class="team-member-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <div class="team-member-img-container">
+              <img
+                src="assets/images/team3.jpg"
+                alt="Team Member 3"
+                class="team-member-img"
+              />
+            </div>
+            <div class="member-info">
+              <h3 class="text-xl font-bold">Emma Davis</h3>
+              <p class="text-purple-400 mt-1">Back-End Developer</p>
+              <div class="member-detail">
+                <p>
+                  Emma builds powerful, scalable back-end systems that power our
+                  most complex applications.
+                </p>
+              </div>
+            </div>
+            <div class="social-icons">
+              <a href="#" class="social-icon">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-stack-overflow"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Team Member Card 4 -->
+          <div
+            class="team-member-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+          >
+            <div class="team-member-img-container">
+              <img
+                src="assets/images/team4.jpg"
+                alt="Team Member 4"
+                class="team-member-img"
+              />
+            </div>
+            <div class="member-info">
+              <h3 class="text-xl font-bold">Liam Wilson</h3>
+              <p class="text-purple-400 mt-1">QA Engineer</p>
+              <div class="member-detail">
+                <p>
+                  Liam ensures our products meet the highest quality standards
+                  through rigorous testing protocols.
+                </p>
+              </div>
+            </div>
+            <div class="social-icons">
+              <a href="#" class="social-icon">
+                <i class="fab fa-gitlab"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Team Member Card 5 -->
+          <div
+            class="team-member-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="400"
+          >
+            <div class="team-member-img-container">
+              <img
+                src="assets/images/team5.jpg"
+                alt="Team Member 5"
+                class="team-member-img"
+              />
+            </div>
+            <div class="member-info">
+              <h3 class="text-xl font-bold">Olivia Martinez</h3>
+              <p class="text-purple-400 mt-1">Marketing Specialist</p>
+              <div class="member-detail">
+                <p>
+                  Olivia creates compelling marketing strategies that help our
+                  clients grow their digital presence.
+                </p>
+              </div>
+            </div>
+            <div class="social-icons">
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Join Our Team Card -->
+          <div
+            class="team-member-card flex flex-col justify-center items-center"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+          >
+            <div class="text-center">
+              <div class="mb-6">
+                <i class="fas fa-plus-circle text-5xl text-purple-500"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Join Our Team</h3>
+              <p class="text-gray-400 mb-6">
+                We're always looking for talented individuals to join our team.
+                Explore opportunities and apply now!
+              </p>
+              <a href="careers.html" class="btn-primary py-2 px-4 rounded-full"
+                >Apply Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+          <!-- Branding & Social -->
+          <div>
+            <a href="/" class="text-2xl font-bold mb-6 block">
+              <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500"
+                >Veritexis</span
+              >
+            </a>
+            <p class="text-gray-400 mb-6">
+              Innovative solutions for your business, delivered with expertise
+              and passion.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-purple-500 transition-colors"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-purple-500 transition-colors"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-purple-500 transition-colors"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-purple-500 transition-colors"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about_us.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/services.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/portfolio.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/team.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blog.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact_us.html"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Resources -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Resources</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Support</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-purple-500 transition-colors"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Newsletter -->
+          <div>
+            <h3 class="text-xl font-bold mb-6">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Subscribe to our newsletter for the latest updates.
+            </p>
+            <form action="#">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="w-full p-3 rounded bg-gray-800 text-white mb-4"
+              />
+              <button type="submit" class="btn-primary w-full">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="text-center">
+          <p class="text-gray-500">
+            &copy; 2023 Veritexis. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Hide preloader after window loads
+        window.addEventListener("load", function () {
+          document.querySelector(".preloader").style.display = "none";
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMenuBtn = document.getElementById("close-menu-btn");
+
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileMenu.classList.remove("hidden");
+        });
+        closeMenuBtn.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+
+        // // Custom Cursor
+        // const cursor = document.querySelector('.cursor-glow');
+        // document.addEventListener('mousemove', (e) => {
+        //   cursor.style.left = e.pageX + 'px';
+        //   cursor.style.top = e.pageY + 'px';
+        // });
+
+        // Initialize AOS
+        AOS.init({
+          duration: 800,
+          once: true,
+        });
       });
-      
-      // Mobile Menu Toggle
-      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const closeMenuBtn = document.getElementById('close-menu-btn');
-      
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.remove('hidden');
-      });
-      closeMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-      
-      // Custom Cursor
-      const cursor = document.querySelector('.cursor-glow');
-      document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.pageX + 'px';
-        cursor.style.top = e.pageY + 'px';
-      });
-      
-      // Initialize AOS
-      AOS.init({
-        duration: 800,
-        once: true
-      });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
