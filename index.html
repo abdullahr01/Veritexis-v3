@@ -645,7 +645,7 @@
                 class="project-overlay absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity"
               >
                 <a
-                  href="#"
+                  href="project details/food-allergy-detection-details.html"
                   class="view-details bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all"
                   data-title="Food Allergy Detection – AI Project"
                   data-description="Imagine snapping a photo of your meal and instantly knowing if it’s safe to eat! This AI-powered project uses advanced computer vision to analyze food images, detect ingredients, and flag potential allergens. By leveraging OpenCV and Tesseract OCR, it processes visuals and text with pinpoint accuracy, cross-referencing them against a detailed CSV database of allergenic ingredients using fuzzy matching. The result? A sleek, user-friendly Tkinter GUI that delivers real-time alerts, empowering users to dine with confidence. Perfect for allergy sufferers and health-conscious foodies alike!"
@@ -683,7 +683,7 @@
                 class="project-overlay absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity"
               >
                 <a
-                  href="#"
+                  href="project details/fact-checker-details.html"
                   class="view-details bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all"
                   data-title="Fact Checking App"
                   data-description="In a world buzzing with information, how do you separate fact from fiction? Enter this ingenious mobile app! Built with React Native and powered by a Python Flask backend, it lets users submit claims and get instant credibility scores. The app scrapes trusted online sources, harnesses the OpenAI GPT API for razor-sharp text analysis, and delivers results in a stunning, animated interface (thanks to Moti!). With Firebase authentication, Google Sign-In, and JWT token security, it’s as robust as it is beautiful. Truth-seekers, rejoice—this is your new best friend!"
@@ -721,7 +721,7 @@
                 class="project-overlay absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity"
               >
                 <a
-                  href="#"
+                  href="project details/real-estate-details.html"
                   class="view-details bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all"
                   data-title="DGBCF – Digital Real Estate App"
                   data-description="Step into the future of real estate with DGBCF, a digital marvel crafted for CDA Islamabad! This app brings properties to life with a zoomable, interactive map where users can explore clickable blocks—each revealing vivid plot images and editable details. Powered by Firebase, it ensures real-time data sync, making property management smooth and instantaneous. Whether you’re a buyer, seller, or agent, this app transforms the real estate experience into something dynamic, intuitive, and downright impressive!"
@@ -760,7 +760,7 @@
                 class="project-overlay absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity"
               >
                 <a
-                  href="#"
+                  href="project details/macromasterai-details.html"
                   class="view-details bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all"
                   data-title="MacromasterAI – Health Companion"
                   data-description="Say hello to MacromasterAI, your personal health guru in app form! Built with Flutter for silky-smooth cross-platform performance, this AI-driven gem helps you master your diet with calorie tracking, a handy calendar, and real-time data streaming via Firebase. The star of the show? An integrated chatbot dishing out tailored health advice—whether you’re aiming to slim down or bulk up. With Google and Facebook login options, it’s as accessible as it is powerful. Health goals? Consider them crushed!"
@@ -791,7 +791,7 @@
           >
             <div class="relative overflow-hidden">
               <img
-                src="assets/images/jobvortex.jpg"
+                src="assets/projects/project-5/logo-removebg-preview.png"
                 alt="JobVortex"
                 class="w-full h-64 object-cover"
               />
@@ -799,7 +799,7 @@
                 class="project-overlay absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity"
               >
                 <a
-                  href="#"
+                  href="project details/jobvortex-details.html"
                   class="view-details bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-40 transition-all"
                   data-title="JobVortex – Service Connector"
                   data-description="Need a plumber, maid, or electrician fast? JobVortex has you covered! This Flutter-built app connects you to trusted service providers with just a tap—no market trips required. Backed by Firebase for real-time updates, it delivers a seamless, doorstep service experience. From urgent fixes to routine chores, JobVortex redefines convenience with its clean design and reliable performance. Household help has never been this easy—or this cool!"
@@ -1114,6 +1114,7 @@
       AOS.init({
         once: true,
       });
+    
       // Mobile menu toggle
       const mobileMenuBtn = document.querySelector("nav button.md\\:hidden");
       const mobileMenu = document.querySelector(
@@ -1125,78 +1126,17 @@
       mobileMenu.querySelector("button").addEventListener("click", () => {
         mobileMenu.classList.add("hidden");
       });
+    
       // Custom Cursor
       const cursor = document.querySelector(".cursor-glow");
       document.addEventListener("mousemove", (e) => {
         cursor.style.left = e.pageX + "px";
         cursor.style.top = e.pageY + "px";
       });
+    
       // Preloader
       window.addEventListener("load", () => {
         document.querySelector(".preloader").style.display = "none";
-      });
-
-      const modal = document.getElementById("projectModal");
-      const modalClose = document.getElementById("modalClose");
-
-      // Function to open modal with animation
-      function openModal(link) {
-        // Get data attributes from the clicked link
-        const title = link.getAttribute("data-title");
-        const description = link.getAttribute("data-description");
-        // const images = JSON.parse(link.getAttribute("data-images"));
-
-        // Update modal content
-        document.getElementById("modalTitle").innerText = title;
-        document.getElementById("modalDescription").innerText = description;
-        // const modalImagesContainer = document.getElementById("modalImages");
-        // modalImagesContainer.innerHTML = "";
-        // images.forEach((src) => {
-        //   const img = document.createElement("img");
-        //   img.src = src;
-        //   img.alt = title;
-        //   img.className = "w-full h-auto rounded";
-        //   modalImagesContainer.appendChild(img);
-        // });
-
-        // Remove "hidden" and force a reflow so the transition will run
-        modal.classList.remove("hidden");
-        // Force reflow
-        void modal.offsetWidth;
-
-        // Add classes to animate modal to full opacity and scale
-        modal.classList.remove("opacity-0", "scale-95");
-        modal.classList.add("opacity-100", "scale-100");
-      }
-
-      // Function to close modal with animation
-      function closeModal() {
-        // Reverse the animation
-        modal.classList.remove("opacity-100", "scale-100");
-        modal.classList.add("opacity-0", "scale-95");
-
-        // Wait for the transition to end before hiding
-        setTimeout(() => {
-          modal.classList.add("hidden");
-        }, 300); // 300ms matches the duration-300 class
-      }
-
-      // Attach event listeners to all "View Details" links
-      document.querySelectorAll(".view-details").forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          openModal(this);
-        });
-      });
-
-      // Close modal on clicking the close button
-      modalClose.addEventListener("click", closeModal);
-
-      // Optional: close modal when clicking outside the modal content
-      window.addEventListener("click", function (e) {
-        if (e.target === modal) {
-          closeModal();
-        }
       });
     </script>
   </body>
