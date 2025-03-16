@@ -1,328 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Details</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="../project details/css/style.css"
-</head>
-<body>
-  <!-- Custom Cursor -->
-  <div class="cursor-glow"></div>
-  
-  <!-- Preloader -->
-  <div class="preloader">
-    <div class="loader"></div>
-  </div>
-  
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">DevPortfolio</div>
-        <div class="nav-links">
-          <a href="../index.html">Home</a>
-          <a href="../portfolio.html">Projects</a>
-          <a href="../about_us.html">About</a>
-          <a href="../contact_us.html">Contact</a>
-        </div>
-        <button class="mobile-toggle">☰</button>
-      </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Details</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <link rel="stylesheet" href="../project details/css/style.css"
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor-glow"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="loader"></div>
     </div>
-  </header>
-  
-  <!-- Mobile Menu -->
-  <div class="mobile-menu hidden">
-    <button class="close-menu">✕</button>
-    <div class="mobile-nav-links">
-      <a href="../index.html">Home</a>
-      <a href="../portfolio.html">Projects</a>
-      <a href="../about_us.html">About</a>
-      <a href="../contact_us.html">Contact</a>
-    </div>
-  </div>
-  
-  <!-- Project Header -->
-  <section class="project-header">
-    <div class="container">
-      <div class="project-title" data-aos="fade-up">
-        <h1>Project Title</h1>
-        <p>A brief description of the project that explains what it is and its main purpose. This should give visitors a quick understanding of what they're looking at.</p>
-      </div>
-      
-      <div class="project-meta" data-aos="fade-up" data-aos-delay="100">
-        <div class="meta-item">
-          <span class="meta-label">Client</span>
-          <span class="meta-value">Client Name</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Timeline</span>
-          <span class="meta-value">3 Months</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Role</span>
-          <span class="meta-value">Lead Developer</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Date</span>
-          <span class="meta-value">January 2025</span>
-        </div>
-      </div>
-      
-      <div class="project-tags" data-aos="fade-up" data-aos-delay="200">
-        <span class="tag">Web Development</span>
-        <span class="tag">UI/UX Design</span>
-        <span class="tag">React.js</span>
-        <span class="tag">Node.js</span>
-      </div>
-      
-      <div class="project-gallery" data-aos="fade-up" data-aos-delay="300">
-        <img src="/api/placeholder/1200/500" alt="Project Main Image" class="main-image">
-        <div class="gallery-thumbs">
-          <img src="/api/placeholder/150/150" alt="Thumbnail 1" class="thumb">
-          <img src="/api/placeholder/150/150" alt="Thumbnail 2" class="thumb">
-          <img src="/api/placeholder/150/150" alt="Thumbnail 3" class="thumb">
-          <img src="/api/placeholder/150/150" alt="Thumbnail 4" class="thumb">
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Project Content -->
-  <section class="project-content">
-    <div class="container">
-      <div class="project-details">
-        <div class="details-main" data-aos="fade-right">
-          <h2>Project Overview</h2>
-          <p>This is a detailed description of the project. It explains the background, objectives, and approach in detail. This section should provide enough information for visitors to understand what the project was about and what was achieved.</p>
-          
-          <p>You can include multiple paragraphs to give a comprehensive overview of the project. Discuss the problem that was being solved, the goals of the project, and how you approached the task.</p>
-          
-          <h2>Development Process</h2>
-          <p>Describe the development process in detail, including the methodologies used, the timeline, and any challenges that were overcome. This helps visitors understand the complexity of the project and the skill involved in completing it.</p>
-          
-          <ul>
-            <li>Planning and research phase</li>
-            <li>Design and prototyping</li>
-            <li>Development and testing</li>
-            <li>Deployment and maintenance</li>
-          </ul>
-          
-          <p>Explain how you collaborated with team members or clients, what tools were used, and how you managed the project timeline. Include any interesting or unique aspects of the development process.</p>
-        </div>
-        
-        <div class="details-sidebar" data-aos="fade-left">
-          <div class="sidebar-section">
-            <h3>Challenges</h3>
-            <ul class="challenges-list">
-              <li>Integration with legacy systems</li>
-              <li>Performance optimization for mobile</li>
-              <li>Cross-browser compatibility</li>
-              <li>Real-time data synchronization</li>
-            </ul>
+
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">DevPortfolio</div>
+          <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../portfolio.html">Projects</a>
+            <a href="../about_us.html">About</a>
+            <a href="../contact_us.html">Contact</a>
           </div>
-          
-          <div class="sidebar-section">
-            <h3>Solutions</h3>
-            <ul class="solutions-list">
-              <li>Custom API adapters for legacy systems</li>
-              <li>Code splitting and lazy loading</li>
-              <li>Progressive enhancement approach</li>
-              <li>WebSocket implementation</li>
-            </ul>
+          <button class="mobile-toggle">☰</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden">
+      <button class="close-menu">✕</button>
+      <div class="mobile-nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../portfolio.html">Projects</a>
+        <a href="../about_us.html">About</a>
+        <a href="../contact_us.html">Contact</a>
+      </div>
+    </div>
+
+    <!-- Project Header -->
+    <section class="project-header">
+      <div class="container">
+        <div class="project-title" data-aos="fade-up">
+          <h1>Project Title</h1>
+          <p>
+            A brief description of the project that explains what it is and its
+            main purpose. This should give visitors a quick understanding of
+            what they're looking at.
+          </p>
+        </div>
+
+        <div class="project-meta" data-aos="fade-up" data-aos-delay="100">
+          <div class="meta-item">
+            <span class="meta-label">Client</span>
+            <span class="meta-value">Client Name</span>
           </div>
-          
-          <div class="sidebar-section">
-            <h3>Technologies Used</h3>
-            <div class="tech-list">
-              <span class="tech-item">HTML5</span>
-              <span class="tech-item">CSS3</span>
-              <span class="tech-item">JavaScript</span>
-              <span class="tech-item">React.js</span>
-              <span class="tech-item">Node.js</span>
-              <span class="tech-item">MongoDB</span>
-              <span class="tech-item">Docker</span>
+          <div class="meta-item">
+            <span class="meta-label">Timeline</span>
+            <span class="meta-value">3 Months</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Lead Developer</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Date</span>
+            <span class="meta-value">January 2025</span>
+          </div>
+        </div>
+
+        <div class="project-tags" data-aos="fade-up" data-aos-delay="200">
+          <span class="tag">Web Development</span>
+          <span class="tag">UI/UX Design</span>
+          <span class="tag">React.js</span>
+          <span class="tag">Node.js</span>
+        </div>
+
+        <div class="project-gallery" data-aos="fade-up" data-aos-delay="300">
+          <img
+            src="../assets/projects/fact-checking-app/Capture-logo.png"
+            alt="Project Main Image"
+            class="main-image"
+          />
+          <div class="gallery-thumbs">
+            <img
+              src="../assets/projects/fact-checking-app/Capture-1.jpg"
+              alt="Thumbnail 1"
+              class="thumb"
+            />
+            <img
+              src="../assets/projects/fact-checking-app/Capture-2.jpg"
+              alt="Thumbnail 2"
+              class="thumb"
+            />
+            <img
+              src="../assets/projects/fact-checking-app/Capture-3.jpg"
+              alt="Thumbnail 3"
+              class="thumb"
+            />
+            <img
+              src="../assets/projects/fact-checking-app/Capture-4.jpg"
+              alt="Thumbnail 4"
+              class="thumb"
+            />
+            <img
+              src="../assets/projects/fact-checking-app/Capture-5.jpg"
+              alt="Thumbnail 5"
+              class="thumb"
+            />
+            <img
+              src="../assets/projects/fact-checking-app/Capture-6.jpg"
+              alt="Thumbnail 6"
+              class="thumb"
+            />
+            <img
+              src="../assets/projects/fact-checking-app/Capture-7.jpg"
+              alt="Thumbnail 7"
+              class="thumb"
+            />
+            <img
+              src="../assets/projects/fact-checking-app/Capture-8.jpg"
+              alt="Thumbnail 8"
+              class="thumb"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+      <div class="container">
+        <div class="project-details">
+          <div class="details-main" data-aos="fade-right">
+            <h2>Project Overview</h2>
+            <p>
+              Fact Checker App is an innovative platform designed to combat
+              misinformation by allowing users to verify the authenticity of
+              information in real-time. Utilizing advanced algorithms and a vast
+              database of verified facts, the app enables users to input text or
+              URLs and receive instant credibility assessments. Built with a
+              user-friendly interface, the Fact Checker App aims to promote
+              informed decision-making and foster a well-informed community.
+            </p>
+
+            <p>
+              You can include multiple paragraphs to give a comprehensive
+              overview of the project. Discuss the problem that was being
+              solved, the goals of the project, and how you approached the task.
+            </p>
+
+            <h2>Development Process</h2>
+            <p>
+              Describe the development process in detail, including the
+              methodologies used, the timeline, and any challenges that were
+              overcome. This helps visitors understand the complexity of the
+              project and the skill involved in completing it.
+            </p>
+
+            <ul>
+              <li>Planning and research phase</li>
+              <li>Design and prototyping</li>
+              <li>Development and testing</li>
+              <li>Deployment and maintenance</li>
+            </ul>
+
+            <p>
+              Explain how you collaborated with team members or clients, what
+              tools were used, and how you managed the project timeline. Include
+              any interesting or unique aspects of the development process.
+            </p>
+          </div>
+
+          <div class="details-sidebar" data-aos="fade-left">
+            <div class="sidebar-section">
+              <h3>Challenges</h3>
+              <ul class="challenges-list">
+                <li>Real-Time Fact Verification</li>
+                <li>Data Source Reliability</li>
+                <li>User Trust & Engagement</li>
+              </ul>
+            </div>
+
+            <div class="sidebar-section">
+              <h3>Solutions</h3>
+              <ul class="solutions-list">
+                <li>
+                  Implemented efficient algorithms capable of rapidly
+                  cross-referencing user input with a comprehensive database of
+                  verified facts.
+                </li>
+                <li>
+                  Collaborated with reputable fact-checking organizations to
+                  ensure the credibility of the information used for
+                  verification.
+                </li>
+                <li>
+                  Developed transparent reporting mechanisms and provided users
+                  with detailed explanations of verification results to build
+                  trust.
+                </li>
+              </ul>
+            </div>
+
+            <div class="sidebar-section">
+              <h3>Technologies Used</h3>
+              <div class="tech-list">
+                
+                <span class="tech-item">React.js</span>
+                <span class="tech-item">Node.js</span>
+                <span class="tech-item">MongoDB</span>
+                <span class="tech-item">API's</span>
+                <span class="tech-item">Express</span>
+                <span class="tech-item">AI</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  
-  <!-- Results Section -->
-  <section class="results-section">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Results & Impact</h2>
-        <p>Here are the key metrics and improvements achieved through this project.</p>
-      </div>
-      
-      <div class="results-grid">
-        <div class="result-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="result-number">40%</div>
-          <div class="result-label">Increase in User Engagement</div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Results & Impact</h2>
+          <p>
+            Here are the key metrics and improvements achieved through this
+            project.
+          </p>
         </div>
-        
-        <div class="result-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="result-number">3x</div>
-          <div class="result-label">Faster Load Times</div>
-        </div>
-        
-        <div class="result-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="result-number">50K+</div>
-          <div class="result-label">New Monthly Users</div>
-        </div>
-        
-        <div class="result-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="result-number">85%</div>
-          <div class="result-label">Client Satisfaction</div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Testimonial Section -->
-  <section class="testimonial-section">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Client Feedback</h2>
-        <p>What our client has to say about the project and our collaboration.</p>
-      </div>
-      
-      <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
-        <div class="testimonial-text">
-          The team delivered an exceptional solution that exceeded our expectations. Their technical expertise, attention to detail, and commitment to meeting deadlines made them a pleasure to work with. The new platform has significantly improved our user engagement and business metrics.
-        </div>
-        
-        <div class="client-info">
-          <img src="/api/placeholder/60/60" alt="Client Avatar" class="client-avatar">
-          <div class="client-name">
-            <h4>Client Name</h4>
-            <p>Position, Company</p>
+
+        <div class="results-grid">
+          <div class="result-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="result-number">40%</div>
+            <div class="result-label">Increase in User Engagement</div>
+          </div>
+
+          <div class="result-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="result-number">3x</div>
+            <div class="result-label">Faster Load Times</div>
+          </div>
+
+          <div class="result-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="result-number">50K+</div>
+            <div class="result-label">New Monthly Users</div>
+          </div>
+
+          <div class="result-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="result-number">85%</div>
+            <div class="result-label">Client Satisfaction</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Interested in similar solutions?</h2>
-          <p>Let's discuss how we can help with your next project or explore other work in our portfolio.</p>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Client Feedback</h2>
+          <p>
+            What our client has to say about the project and our collaboration.
+          </p>
         </div>
-        
-        <div class="cta-buttons">
-          <a href="#" class="btn btn-primary">Contact Us</a>
-          <a href="#" class="btn btn-secondary">View More Projects</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3>About</h3>
-          <ul class="footer-links">
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Values</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <h3>Services</h3>
-          <ul class="footer-links">
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">UI/UX Design</a></li>
-            <li><a href="#">Mobile Apps</a></li>
-            <li><a href="#">Consulting</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <h3>Contact</h3>
-          <ul class="footer-links">
-            <li><a href="#">Email Us</a></li>
-            <li><a href="#">Phone</a></li>
-            <li><a href="#">Office</a></li>
-            <li><a href="#">Support</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <h3>Connect</h3>
-          <div class="social-links">
-            <a href="#" class="social-link">FB</a>
-            <a href="#" class="social-link">TW</a>
-            <a href="#" class="social-link">IG</a>
-            <a href="#" class="social-link">LI</a>
+
+        <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-text">
+            The team delivered an exceptional solution that exceeded our
+            expectations. Their technical expertise, attention to detail, and
+            commitment to meeting deadlines made them a pleasure to work with.
+            The new platform has significantly improved our user engagement and
+            business metrics.
+          </div>
+
+          <div class="client-info">
+            <img
+              src="/api/placeholder/60/60"
+              alt="Client Avatar"
+              class="client-avatar"
+            />
+            <div class="client-name">
+              <h4>Client Name</h4>
+              <p>Position, Company</p>
+            </div>
           </div>
         </div>
       </div>
-      
-      <div class="copyright">
-        <p>&copy; 2025 DevPortfolio. All rights reserved.</p>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Interested in similar solutions?</h2>
+            <p>
+              Let's discuss how we can help with your next project or explore
+              other work in our portfolio.
+            </p>
+          </div>
+
+          <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">Contact Us</a>
+            <a href="#" class="btn btn-secondary">View More Projects</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
-  
-  <!-- JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    // Initialize AOS
-    document.addEventListener('DOMContentLoaded', function() {
-      AOS.init({
-        duration: 800,
-        easing: 'ease-out',
-        once: true
-      });
-      
-      // Remove preloader after page load
-      const preloader = document.querySelector('.preloader');
-      setTimeout(() => {
-        preloader.style.opacity = '0';
+    </section>
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>About</h3>
+            <ul class="footer-links">
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Values</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Services</h3>
+            <ul class="footer-links">
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">UI/UX Design</a></li>
+              <li><a href="#">Mobile Apps</a></li>
+              <li><a href="#">Consulting</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul class="footer-links">
+              <li><a href="#">Email Us</a></li>
+              <li><a href="#">Phone</a></li>
+              <li><a href="#">Office</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Connect</h3>
+            <div class="social-links">
+              <a href="#" class="social-link">FB</a>
+              <a href="#" class="social-link">TW</a>
+              <a href="#" class="social-link">IG</a>
+              <a href="#" class="social-link">LI</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 DevPortfolio. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      // Initialize AOS
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          duration: 800,
+          easing: "ease-out",
+          once: true,
+        });
+
+        // Remove preloader after page load
+        const preloader = document.querySelector(".preloader");
         setTimeout(() => {
-          preloader.style.display = 'none';
-        }, 300);
-      }, 500);
-      
-      // Custom cursor
-      const cursorGlow = document.querySelector('.cursor-glow');
-      document.addEventListener('mousemove', function(e) {
-        cursorGlow.style.left = e.clientX + 'px';
-        cursorGlow.style.top = e.clientY + 'px';
-      });
-      
-      // Mobile menu toggle
-      const mobileToggle = document.querySelector('.mobile-toggle');
-      const closeMenu = document.querySelector('.close-menu');
-      const mobileMenu = document.querySelector('.mobile-menu');
-      
-      mobileToggle.addEventListener('click', function() {
-        mobileMenu.classList.remove('hidden');
-      });
-      
-      closeMenu.addEventListener('click', function() {
-        mobileMenu.classList.add('hidden');
-      });
-      
-      // Gallery image swap
-      const mainImage = document.querySelector('.main-image');
-      const thumbs = document.querySelectorAll('.thumb');
-      
-      thumbs.forEach(thumb => {
-        thumb.addEventListener('click', function() {
-          const src = this.getAttribute('src');
-          mainImage.setAttribute('src', src.replace('150/150', '1200/500'));
+          preloader.style.opacity = "0";
+          setTimeout(() => {
+            preloader.style.display = "none";
+          }, 300);
+        }, 500);
+
+        // Custom cursor
+        const cursorGlow = document.querySelector(".cursor-glow");
+        document.addEventListener("mousemove", function (e) {
+          cursorGlow.style.left = e.clientX + "px";
+          cursorGlow.style.top = e.clientY + "px";
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector(".mobile-toggle");
+        const closeMenu = document.querySelector(".close-menu");
+        const mobileMenu = document.querySelector(".mobile-menu");
+
+        mobileToggle.addEventListener("click", function () {
+          mobileMenu.classList.remove("hidden");
+        });
+
+        closeMenu.addEventListener("click", function () {
+          mobileMenu.classList.add("hidden");
+        });
+
+        // Gallery image swap
+        const mainImage = document.querySelector(".main-image");
+        const thumbs = document.querySelectorAll(".thumb");
+
+        thumbs.forEach((thumb) => {
+          thumb.addEventListener("click", function () {
+            const src = this.getAttribute("src");
+            mainImage.setAttribute("src", src.replace("150/150", "1200/500"));
+          });
         });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
