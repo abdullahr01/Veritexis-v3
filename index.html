@@ -25,15 +25,16 @@
         /* background: linear-gradient(135deg, #6b46c1 0%, #3182ce 100%); */
         border-radius: 8px;
         margin-right: 10px;
-        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+          0 1px 3px rgba(0, 0, 0, 0.08);
       }
-      
+
       .logo-letter {
         font-weight: bold;
         color: white;
         font-size: 20px;
       }
-      
+
       /* Enhanced navbar */
       .enhanced-navbar {
         backdrop-filter: blur(10px);
@@ -41,30 +42,32 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       }
-      
+
       /* Enhanced hero section */
       .hero-enhanced-content {
         max-width: 800px;
         margin: 0 auto;
       }
-      
+
       .hero-tagline {
         font-weight: 300;
         letter-spacing: 1px;
         margin-bottom: 1.5rem;
       }
-      
+
       .btn-primary {
         background: linear-gradient(135deg, #6b46c1 0%, #3182ce 100%);
         transition: all 0.3s ease;
-        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+          0 1px 3px rgba(0, 0, 0, 0.08);
       }
-      
+
       .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1),
+          0 3px 6px rgba(0, 0, 0, 0.08);
       }
-      
+
       /* Enhanced stats */
       .stat-card {
         background: rgba(26, 32, 44, 0.4);
@@ -73,13 +76,13 @@
         padding: 2rem;
         transition: all 0.3s ease;
       }
-      
+
       .stat-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         border-color: rgba(145, 70, 255, 0.3);
       }
-      
+
       /* Custom animations */
       @keyframes fadeInUp {
         from {
@@ -91,7 +94,7 @@
           transform: translate3d(0, 0, 0);
         }
       }
-      
+
       .fade-in-up {
         animation: fadeInUp 0.8s ease forwards;
       }
@@ -110,13 +113,20 @@
     <div class="cursor-glow"></div>
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 transition-all duration-300 enhanced-navbar" id="navbar">
+    <nav
+      class="fixed w-full z-50 transition-all duration-300 enhanced-navbar"
+      id="navbar"
+    >
       <div
         class="container mx-auto px-4 py-4 flex justify-between items-center"
       >
         <a href="/" class="text-2xl font-bold flex items-center">
           <div class="logo-icon">
-            <img src="assets/veritexis-v2-logo-removebg-preview.png" alt="Veritexis Logo" class="w-10 h-10 rounded-lg" />
+            <img
+              src="assets/veritexis-v2-logo-removebg-preview.png"
+              alt="Veritexis Logo"
+              class="w-10 h-10 rounded-lg"
+            />
           </div>
           <span
             class="text-3xl bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500"
@@ -130,6 +140,7 @@
             <li><a href="services.html" class="nav-link">Services</a></li>
             <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
             <li><a href="team.html" class="nav-link">Team</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
             <li><a href="contact_us.html" class="nav-link">Contact</a></li>
           </ul>
         </div>
@@ -162,6 +173,7 @@
         <a href="services.html" class="nav-link">Services</a>
         <a href="portfolio.html" class="nav-link">Portfolio</a>
         <a href="team.html" class="nav-link">Team</a>
+        <a href="blog.html" class="nav-link">Blog</a>
         <a href="contact_us.html" class="nav-link">Contact</a>
         <button class="mt-8 focus:outline-none">
           <svg
@@ -196,8 +208,16 @@
       <div
         class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4"
       >
-        <div class="hero-enhanced-content" data-aos="zoom-in" data-aos-duration="1000">
-          <p class="text-purple-300 uppercase tracking-widest mb-2 hero-tagline fade-in-up">Innovative Technology Solutions</p>
+        <div
+          class="hero-enhanced-content"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
+          <p
+            class="text-purple-300 uppercase tracking-widest mb-2 hero-tagline fade-in-up"
+          >
+            Innovative Technology Solutions
+          </p>
           <h1 class="text-5xl md:text-7xl font-bold mb-6">
             <div class="flex items-center justify-center mb-4">
               <span
@@ -211,7 +231,10 @@
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            Transforming businesses through <span class="highlight">innovative technology</span> and <span class="highlight">strategic solutions</span> that drive growth and enhance performance.
+            Transforming businesses through
+            <span class="highlight">innovative technology</span> and
+            <span class="highlight">strategic solutions</span> that drive growth
+            and enhance performance.
           </p>
           <div
             class="flex flex-col sm:flex-row gap-4 justify-center"
@@ -662,7 +685,8 @@
                 >
               </div>
               <p class="text-gray-300">
-                Chat with your data—intelligent recommendations at your fingertips.
+                Chat with your data—intelligent recommendations at your
+                fingertips.
               </p>
             </div>
           </div>
@@ -1114,7 +1138,7 @@
       AOS.init({
         once: true,
       });
-    
+
       // Mobile menu toggle
       const mobileMenuBtn = document.querySelector("nav button.md\\:hidden");
       const mobileMenu = document.querySelector(
@@ -1126,14 +1150,14 @@
       mobileMenu.querySelector("button").addEventListener("click", () => {
         mobileMenu.classList.add("hidden");
       });
-    
+
       // Custom Cursor
       const cursor = document.querySelector(".cursor-glow");
       document.addEventListener("mousemove", (e) => {
         cursor.style.left = e.pageX + "px";
         cursor.style.top = e.pageY + "px";
       });
-    
+
       // Preloader
       window.addEventListener("load", () => {
         document.querySelector(".preloader").style.display = "none";
